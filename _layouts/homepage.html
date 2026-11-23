@@ -29,12 +29,17 @@
     {% endif %}
   </head>
   <body>
+    <div class="site-masthead">
+      <div class="site-masthead__inner">
+        <h1 class="site-masthead__name"><a class="site-masthead__brand" href="/">{{ site.title }}</a></h1>
+        {% include section-nav.md %}
+      </div>
+    </div>
     <div class="wrapper">
       <header>
         {% if site.avatar %}
         <a class="image avatar"><img src="{{ site.avatar }}" alt=""></a>
         {% endif %}
-        <h1>{{ site.title }}</h1>
         {% if site.position %}
         <position>{{ site.position }}</position>
         <br>
@@ -84,7 +89,6 @@
         </div>
       </header>
       <section>
-        {% include section-nav.md %}
         {{ content }}
         {% if site.enable_footnote %}
         <p><small>© 2026 {{ site.title }}. Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" rel="noopener noreferrer">Minimal Light</a> theme.</small></p>
