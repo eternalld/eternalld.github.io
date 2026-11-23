@@ -7,7 +7,7 @@ const config = readFileSync(new URL("../_config.yml", import.meta.url), "utf8");
 const font = readFileSync(new URL("../assets/css/font.css", import.meta.url), "utf8");
 
 test("the layout names Haoxin's GitHub link and only the Busuanzi counter", () => {
-  assert.match(config, /^title: Haoxin$/m);
+  assert.match(config, /^title: Haoxin Lyu$/m);
   assert.match(config, /^github_link: https:\/\/github\.com\/eternalld$/m);
   assert.equal(config.includes("google_analytics"), false);
   assert.equal(config.includes("Yaoyao"), false);

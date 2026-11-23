@@ -1,11 +1,16 @@
 # Example only. This file is not published.
-# Copy entries you want into _data/publications.yml.
-heading: Selected Publications
+# Real entries belong in _data/publications.yml.
+# Leave image out when there is no verified figure.
+heading: Publications
 items:
   - title: "Paper title"
-    authors: "Author names"
-    venue: "Venue, year"
+    title_url: https://example.com/paper
+    venue: "Venue, year, pp. 1–2."
     venue_short: "VENUE"
+    authors:
+      - name: "Author One"
+      - name: "Haoxin Lyu"
+        highlight: true
     links:
-      - label: PDF
-        url: https://example.com/paper.pdf
+      - label: DOI
+        url: https://example.com/doi
