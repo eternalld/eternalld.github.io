@@ -1,6 +1,6 @@
 {% assign items = site.data.publications.items %}
 {% if items and items.size > 0 %}
-<h2 id="publications" class="publications-heading">{{ site.data.publications.heading | default: "Publications" }}</h2>
+<h2 id="publications" class="publications-heading section-anchor">{{ site.data.publications.heading | default: "Publications" }}</h2>
 <div class="publications">
 <ol class="bibliography">
 {% for link in items %}
@@ -22,7 +22,9 @@
     {% if link.links %}
     <div class="links">
       {% for item in link.links %}
-      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+      {% if item.url and item.label %}
+      <a class="resource-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+      {% endif %}
       {% endfor %}
     </div>
     {% endif %}

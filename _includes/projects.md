@@ -1,6 +1,6 @@
 {% assign items = site.data.projects.items %}
 {% if items and items.size > 0 %}
-<h2>{{ site.data.projects.heading | default: "Projects" }}</h2>
+<h2 id="projects" class="section-anchor">{{ site.data.projects.heading | default: "Projects" }}</h2>
 <ul>
 {% for item in items %}
 <li>

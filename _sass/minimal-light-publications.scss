@@ -44,11 +44,11 @@ blockquote {
 }
 
 .publications-heading {
-  margin: 2px 0 -15px;
+  margin: 2.1rem 0 0.8rem;
 }
 
 .publications {
-  margin-top: 2rem;
+  margin-top: 0.85rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -158,6 +158,30 @@ blockquote {
       }
 
       .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 0.45rem;
+        margin-top: 0.4rem;
+
+        a.resource-link {
+          display: inline-block;
+          max-width: 100%;
+          color: $color-link;
+          font-size: 0.95rem;
+          font-weight: 700;
+          line-height: 1.45;
+          text-decoration: none;
+          overflow-wrap: anywhere;
+
+          &:hover {
+            color: $color-link-hover;
+          }
+
+          @include dark {
+            color: $dark-accent;
+          }
+        }
+
         a.btn {
           color: #000000;
           border: 1px solid #000000;

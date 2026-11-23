@@ -12,14 +12,17 @@ const about = [
 ].join(" ");
 
 test("About Me uses the checked wording once for the role", () => {
-  assert.equal(config.includes(about), true);
-  assert.equal(config.split("algorithm engineer").length - 1, 1);
-  assert.equal(config.includes("Xu Teli Honors Program"), true);
+  const raw = config.match(/^bio: \|\r?\n([\s\S]*?)^favicon:/m);
+  assert.ok(raw, "bio is a literal block that can hold paragraphs");
+  const paragraphs = raw[1].split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean);
+  assert.equal(paragraphs.length, 3);
+  const plain = raw[1].replace(/\*/g, "").split("\n").map((line) => line.trim()).filter(Boolean).join(" ");
+  assert.equal(plain, about);
+  assert.equal(plain.split("algorithm engineer").length - 1, 1);
+  assert.equal(raw[1].includes("**"), false);
   assert.equal(config.includes("talent class"), false);
   assert.equal(config.includes("徐特立"), false);
-  assert.equal(config.includes("master's degree in computing"), true);
-  assert.equal(/M\.?Sc|M\.?Eng|Ph\.?D|B\.Eng/.test(config), false);
-  assert.equal(config.includes("Agent RSI"), true);
+  assert.equal(/M\.?Sc|M\.?Eng|Ph\.?D|B\.?Eng/.test(config), false);
 });
 
 test("quantitative trading is only a personal interest", () => {

@@ -1,6 +1,6 @@
 {% assign items = site.data.curriculum.items %}
 {% if items and items.size > 0 %}
-<h2 id="curriculum">{{ site.data.curriculum.heading | default: "履历表" }}</h2>
+<h2 id="curriculum" class="section-anchor">{{ site.data.curriculum.heading | default: "履历表" }}</h2>
 <ul>
 {% for item in items %}
 <li>

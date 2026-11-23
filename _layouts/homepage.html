@@ -84,9 +84,10 @@
         </div>
       </header>
       <section>
+        {% include section-nav.md %}
         {{ content }}
         {% if site.enable_footnote %}
-        <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" rel="noopener noreferrer">Minimal Light</a> theme.</small></p>
+        <p><small>© 2026 {{ site.title }}. Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" rel="noopener noreferrer">Minimal Light</a> theme.</small></p>
         {% endif %}
       </section>
       <footer></footer>

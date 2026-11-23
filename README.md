@@ -1,6 +1,6 @@
 # Haoxin Lyu
 
-个人学术主页，版式来自 [Minimal Light](https://github.com/yaoyao-liu/minimal-light)（commit `3786d5d480d2cfb1e384ae83bf43752998d78f80`，CC0）。主题说明保留在页面底部。
+个人学术主页，版式来自 [Minimal Light](https://github.com/yaoyao-liu/minimal-light)（commit `3786d5d480d2cfb1e384ae83bf43752998d78f80`，CC0）。主题说明保留在页面底部。阅读栏使用 Nunito，许可见 `assets/fonts/nunito-OFL.txt`。
 
 已发布的身份是名字 Haoxin Lyu、GitHub [eternalld](https://github.com/eternalld)，以及侧边栏里的 Google Scholar 链接。没有核实过的单位、职位、学历或邮箱都不会写上。没有条目的栏目不会出现。
 
@@ -10,14 +10,15 @@
 
 - `_config.yml`：名字、单位、职位、简介、头像、GitHub 和 Scholar 链接。不需要的项删掉整行。`pageviews: false` 会关掉访问次数。
 - `_data/interests.yml`：`items` 是 Research Interests，`personal_items` 是主栏里单独的 Personal Interests。量化交易放在 `personal_items`。
-- `_data/news.yml`：近况。空着就不显示。
+- `_data/news.yml`：近况。每条要有 `date` 和 `text`，`url` 可选。没有合格条目时，News 和顶部对应链接都不显示。字段示例在 `docs/examples/news.sample.yml`，不会发布。
+- 顶部导航不用单独配置。它只列出当前页面真正渲染出来的 About、Research Interests、Personal Interests、News、Publications、Projects、履历表。
 - `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。
 - `_data/projects.yml`：项目或工程探索。
 - `_data/curriculum.yml`：标题必须是 `履历表`。这里留给以后的教育和工作经历。`items` 为空时，页面不显示这一栏，也不会出现示例职位。
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
-`bio` 可以用 Markdown。
+`bio` 可以用 Markdown。首屏欢迎语、两行题目和三个方向标签在 `_data/intro.yml`。页面没有单独的 About Me 标题。Blog、Awards、Experience 没有数据，也就没有栏目。履历栏的名字保持为履历表。
 
 头像目前没有设置，页面也不会显示破图。照片上传到 `assets/img/avatar.jpg`：
 

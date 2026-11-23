@@ -1,8 +1,32 @@
+/* Nunito, SIL Open Font License. See assets/fonts/nunito-OFL.txt. */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/nunito-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/nunito-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/nunito-latin-700-normal.woff2") format("woff2");
+}
+
 body {
   background-color: #fff;
   padding: 0;
   margin: 0;
-  font: 16px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", "Noto Serif SC", serif;
-  color: #595959;
-  font-weight: 400;
+  font: 400 16px/1.6 "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  color: #5f6368;
 }
