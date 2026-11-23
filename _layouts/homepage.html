@@ -56,15 +56,6 @@
         <email>{{ site.email }}</email>
         {% endif %}
 
-        <div id="daily-quote" class="daily-quote" data-quotes="./assets/data/quotes.json" hidden>
-          <p class="daily-quote__label">每日一句</p>
-          <blockquote class="daily-quote__text" data-quote-text></blockquote>
-          <p class="daily-quote__by" data-quote-by hidden>
-            <span data-quote-author hidden></span>
-            <a data-quote-source href="" rel="noopener noreferrer" hidden></a>
-          </p>
-        </div>
-
         {% if site.pageviews %}
         <div id="busuanzi_container_site_pv" class="pageviews" hidden>
           <p class="pageviews__count">本站累计访问 <span id="busuanzi_value_site_pv"></span> 次</p>
@@ -97,8 +88,6 @@
       <footer></footer>
     </div>
     <script src="./assets/js/list-controls.js" defer></script>
-    <script src="./assets/js/quote-calendar.js" defer></script>
-    <script src="./assets/js/daily-quote.js" defer></script>
     <script src="./assets/js/page-views.js" defer></script>
     {% if site.pageviews %}
     <!-- Reviewed 2026-11-23 from https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js (1939 bytes, sha384-oaKlriFiEaHzTKw66TKlzwgjYHPT5tvx+uf4JRnAGvP7HCHj5NPqEoAkyyOAPxZN). That host sends no CORS header, so a browser cannot enforce the hash without blocking the documented script. -->

@@ -61,7 +61,11 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /aria-label="Google Scholar"/);
   assert.match(index, /https:\/\/scholar\.google\.com\/citations\?user=lMEcQNwAAAAJ(?:&|&amp;)hl=zh-CN/);
   assert.match(index, /href="https:\/\/github\.com\/eternalld"/);
-  assert.match(index, /每日一句/);
+  absent("每日一句");
+  absent("all design is redesign");
+  absent("quote-calendar.js");
+  absent("daily-quote.js");
+  absent("quotes.json");
   assert.match(index, /本站累计访问/);
   const counterStart = index.indexOf('id="busuanzi_container_site_pv"');
   const countAt = index.indexOf("本站累计访问");
@@ -135,8 +139,6 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("A real update you want to show.");
   absent("孔子");
   absent("論語");
-  const publishedQuotes = JSON.parse(readFileSync(new URL("assets/data/quotes.json", site), "utf8"));
-  assert.deepEqual(publishedQuotes, ["all design is redesign"]);
 });
 
 test("local assets and preserved pages are present, and drafts are not", () => {
@@ -145,11 +147,8 @@ test("local assets and preserved pages are present, and drafts are not", () => {
     "assets/css/font.css",
     "assets/css/font_sans_serif.css",
     "assets/fonts/nunito-latin-400-normal.woff2",
-    "assets/js/quote-calendar.js",
-    "assets/js/daily-quote.js",
     "assets/js/page-views.js",
     "assets/js/list-controls.js",
-    "assets/data/quotes.json",
     "assets/fonts/crimson-pro-latin-400-normal.woff2",
     "blog.html",
     "resume.html",
@@ -158,6 +157,8 @@ test("local assets and preserved pages are present, and drafts are not", () => {
     assert.equal(existsSync(new URL(relative, site)), true, relative);
   }
   const blog = readFileSync(new URL("blog.html", site), "utf8");
+  assert.equal(blog.includes("每日一句"), false);
+  assert.equal(blog.includes("quotes.json"), false);
   assert.match(blog, /To be soon/);
   assert.match(blog, /href="\/blog\.html"/);
   assert.equal(blog.includes("这是博客"), false);
