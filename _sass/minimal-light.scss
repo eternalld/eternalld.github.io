@@ -595,38 +595,6 @@ header ul {
   }
 }
 
-.daily-quote {
-  margin: 1.1rem 0 0.75rem;
-  padding: 0 0.35rem;
-  text-align: left;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-
-  .daily-quote__label {
-    margin: 0 0 0.35rem;
-    color: $color-heading;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-  }
-
-  blockquote {
-    margin: 0;
-    padding: 0 0 0 0.55rem;
-    border-left: 2px solid $color-heading;
-    background: transparent;
-    font-size: 0.95rem;
-    font-style: normal;
-    line-height: 1.45;
-  }
-
-  .daily-quote__by {
-    margin: 0.4rem 0 0;
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-}
-
 .pageviews {
   margin: 0.85rem 0 0.4rem;
   padding: 0 0.35rem;
@@ -1088,17 +1056,6 @@ h2.section-anchor {
   h2.section-anchor,
   .section-nav {
     border-bottom-color: rgba(255, 255, 255, 0.12);
-  }
-
-  .daily-quote {
-    .daily-quote__label {
-      color: $dark-accent;
-    }
-
-    blockquote {
-      color: $dark-text;
-      border-left-color: $dark-accent;
-    }
   }
 
   .pageviews {

@@ -11,7 +11,7 @@ The hierarchy and visual tone follow the public page at https://wentaoguo.net/ a
 
 ## What is on the page
 
-The left column stays the Minimal Light sidebar: the name, the daily sentence `all design is redesign`, the page-view line without a disclosure, and the GitHub and Google Scholar links. No avatar is added.
+The left column stays the Minimal Light sidebar: the page-view line without a disclosure, and the GitHub and Google Scholar links. The daily sentence has been removed. No avatar is added.
 
 The reading column opens with a centered intro and no "About Me" heading:
 

@@ -16,7 +16,7 @@
 - `_data/projects.yml`：项目。字段是 `title`、`year`、`summary`、`links`（`label` 和 `url`）。文件顺序就是显示顺序，新的放前面。超过 4 条时出现展开/收起。没有条目时显示 “To be soon”，不出现按钮。
 - `_data/awards.yml`：奖项。字段是 `year`、`title`、`source`、`source_url`、`scope`。至少两个不同年份时才显示年份按钮。没有条目时显示 “To be soon”。
 - `_data/curriculum.yml`：标题是 `Experience`，放在最后。字段是 `period`、`organization`、`role`、`detail`，可选 `url` 和 `link_label`。没有条目时显示 “To be soon”。旧地址 `#curriculum` 仍停在这一节，导航里不再单列。
-- 顶部是横跨页面的独立栏：左侧名字链回首页，右侧固定为 News、Publications、Experience、Projects、Awards、Blog。Blog 指向 `/blog.html`，其余指向首页对应栏目。侧栏不再重复名字，仍保留每日一句、访问次数、GitHub 和 Scholar。页面不再单列 Research Interests 或 Personal Interests。
+- 顶部是横跨页面的独立栏：左侧名字链回首页，右侧固定为 News、Publications、Experience、Projects、Awards、Blog。Blog 指向 `/blog.html`，其余指向首页对应栏目。侧栏不再重复名字，仍保留访问次数、GitHub 和 Scholar。页面不再显示每日一句。页面不再单列 Research Interests 或 Personal Interests。
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
@@ -33,14 +33,6 @@ avatar: ./assets/img/avatar.jpg
 ```
 
 配置文件的编辑地址是 https://github.com/eternalld/eternalld.github.io/edit/main/_config.yml 。没有这行时，侧边栏不显示头像。
-
-## 每日一句
-
-侧边栏标题仍是「每日一句」。句子只来自本地文件 `assets/data/quotes.json`，不请求外部名言接口。在 GitHub 上直接编辑：
-
-https://github.com/eternalld/eternalld.github.io/edit/main/assets/data/quotes.json
-
-文件是一个 JSON 数组。现在只有一句 `all design is redesign`，页面就固定显示这一句，不显示作者或出处。要换成随机出现，就在这个数组里按同样的写法再加你自己的句子，每句用引号包起来，中间加逗号。两句及以上时，每次打开页面随机选一句。数组写成 `[]` 时，这一栏整段隐藏，不会出现空白或 undefined。不需要作者和出处；只有当你自己写上 `author`、`sourceTitle` 和 `https` 的 `sourceUrl` 时，出处才会出现。
 
 ## 访问次数
 
