@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="card-list" data-project-list data-initial="4">
+  <article data-project>One</article>
+  <article data-project>Two</article>
+  <article data-project>Three</article>
+  <article data-project>Four</article>
+  <article data-project hidden>Five</article>
+  <article data-project hidden>Six</article>
+  <button type="button" data-project-toggle aria-expanded="false">Show 2 more projects</button>
+</div>
+<div class="award-list">
+  <div role="group">
+    <button type="button" data-year-button="all" aria-pressed="true">Full</button>
+    <button type="button" data-year-button="2026" aria-pressed="false">2026</button>
+    <button type="button" data-year-button="2025" aria-pressed="false">2025</button>
+  </div>
+  <h3 data-award-year="2026">2026</h3>
+  <ul><li data-award data-year="2026">Award 2026</li></ul>
+  <h3 data-award-year="2025">2025</h3>
+  <ul><li data-award data-year="2025">Award 2025</li></ul>
+</div>
+<nav class="tag-filter" aria-label="Blog tags">
+  <a href="?">All</a>
+  <a href="?tag=math">math</a>
+</nav>
+<ul>
+  <li data-post data-tags="math">Math note</li>
+  <li data-post data-tags="robotics">Robot note</li>
+</ul>
+</body>
+</html>

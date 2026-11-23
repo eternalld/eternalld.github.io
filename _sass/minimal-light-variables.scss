@@ -4,11 +4,11 @@
 $dark-mode: true !default;
 
 // Light mode
-$color-text: #595959;
-$color-heading: #043361;
+$color-text: #5f6368;
+$color-heading: #202124;
 $color-strong: #222;
-$color-link: #39c;
-$color-link-hover: #069;
+$color-link: #6454d6;
+$color-link-hover: #4f46e5;
 $color-border: #e5e5e5;
 $color-muted: #444;
 
@@ -16,7 +16,7 @@ $color-muted: #444;
 $dark-bg: #20212b;
 $dark-text: #dadbdf;
 $dark-strong: #eeeff0;
-$dark-accent: rgb(62, 183, 240);
+$dark-accent: #c4b8ff;
 
 // Breakpoints
 $tablet: "print, screen and (max-width: 960px)";

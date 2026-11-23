@@ -1,7 +1,11 @@
 # Example only. This file is not published.
 # Copy entries you want into _data/projects.yml.
+# Put the newest project first. The page shows four, then a button if more exist.
 heading: Projects
 items:
   - title: "Project name"
+    year: "2026"
     summary: "One sentence about the work."
-    url: https://example.com/project
+    links:
+      - label: Repository
+        url: https://example.com/project

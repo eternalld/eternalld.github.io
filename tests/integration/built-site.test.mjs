@@ -11,8 +11,39 @@ function absent(needle) {
 
 test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<title>Haoxin Lyu<\/title>/);
-  assert.match(index, /story visualization with vision-language evaluation \(ICASSP 2026\)/);
-  assert.match(index, /mask-free referring image segmentation \(ECCV 2024\)/);
+  assert.match(index, /I am currently an algorithm engineer working on large language models \(LLMs\)\./);
+  assert.match(index, /Welcome, I'm Haoxin Lyu\./);
+  assert.match(index, /Agents, Post-Training,/);
+  assert.match(index, /and Controllable Generation/);
+  assert.match(index, /Agent &amp; Generative Model Post-Training|Agent & Generative Model Post-Training/);
+  absent("About Me");
+  assert.match(index, /<h2 id="blog" class="section-anchor">Blog<\/h2>/);
+  assert.match(index, /<h2 id="awards" class="section-anchor">Awards &amp; Honors<\/h2>|Awards & Honors/);
+  absent("Experience");
+  absent("Coming soon");
+  absent("Wentao");
+  absent("Selected");
+  absent("Full list");
+  assert.equal(index.split("algorithm engineer").length - 1, 1);
+  assert.match(index, /Xu Teli Honors Program/);
+  absent("talent class");
+  assert.match(index, /master[’']s degree in computing/);
+  absent("徐特立");
+  absent("Text / Image / Reference");
+  assert.match(index, /<h2 id="research-interests" class="section-anchor">Research Interests<\/h2>/);
+  assert.match(index, /<h2 id="personal-interests" class="section-anchor">Personal Interests<\/h2>/);
+  const researchAt = index.indexOf('id="research-interests"');
+  const personalAt = index.indexOf('id="personal-interests"');
+  const newsAt = index.indexOf('id="news"');
+  const blogAt = index.indexOf('id="blog"');
+  const publicationsAt = index.indexOf('id="publications"');
+  const projectsAt = index.indexOf('id="projects"');
+  const awardsAt = index.indexOf('id="awards"');
+  const curriculumAt = index.indexOf('id="curriculum"');
+  assert.ok(researchAt < personalAt && personalAt < newsAt && newsAt < blogAt && blogAt < publicationsAt);
+  assert.ok(publicationsAt < projectsAt && projectsAt < awardsAt && awardsAt < curriculumAt);
+  assert.equal(index.slice(researchAt, personalAt).includes("Quantitative"), false);
+  assert.equal(index.slice(personalAt, publicationsAt).includes("AI Agents for Quantitative Trading"), true);
   assert.match(index, /End-to-End Story Visualization Framework/);
   assert.match(index, /GTMS: A Gradient-Driven Tree-Guided Mask-Free Referring Image Segmentation Method/);
   assert.match(index, /https:\/\/doi\.org\/10\.1109\/icassp55912\.2026\.11464718/);
@@ -36,8 +67,11 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("统计说明");
   absent("<details");
   absent("按页面浏览次数统计，非独立访客人数");
-  assert.match(index, /Powered by Jekyll and/);
+  assert.match(index, /© 2026 Haoxin Lyu\. Powered by Jekyll and/);
   assert.match(index, /minimal-light/);
+  absent("AcademicPages");
+  absent("Selen");
+  absent("Wentao");
   absent("Your Name");
   absent("Your Affiliation");
   absent("Yaoyao");
@@ -46,18 +80,43 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("example.com");
   absent("CVPR");
   absent("i.dmego.cn");
-  absent("Research Interests");
-  absent("履历表");
+  assert.match(index, /<h2 id="curriculum" class="section-anchor">履历表<\/h2>/);
+  absent("Services");
   absent("bit.edu.cn");
   absent("gmail.com");
-  absent("Beijing Institute of Technology");
-  absent(">Projects<");
+  assert.match(index, /<h2 id="projects" class="section-anchor">Projects<\/h2>/);
   absent("位访客");
   absent("googletagmanager");
   absent("fonts.googleapis.com");
   absent("font-awesome");
   absent("busuanzi_value_site_uv");
   absent("docs/examples");
+  const navStart = index.indexOf('<nav class="section-nav" aria-label="On this page">');
+  const navEnd = index.indexOf("</nav>", navStart);
+  assert.ok(navStart !== -1 && navEnd > navStart);
+  const nav = index.slice(navStart, navEnd);
+  for (const href of ["#research-interests", "#personal-interests", "#news", "/blog.html", "#publications", "#projects", "#awards", "#curriculum"]) {
+    assert.equal(nav.includes(href), true, href);
+  }
+  assert.equal(nav.includes("#about"), false);
+  assert.equal(nav.includes("Selected"), false);
+  assert.equal(nav.includes("Full"), false);
+  absent('type="search"');
+  assert.match(index, /id="news"/);
+  assert.match(index, />News</);
+  absent("Show fewer");
+  absent("data-year-button");
+  absent("tag-filter");
+  assert.equal((index.match(/To be soon/g) || []).length, 5);
+  absent('id="about"');
+  assert.match(index, /id="research-interests"/);
+  assert.match(index, /id="personal-interests"/);
+  assert.match(index, /id="publications"/);
+  const about = index.slice(index.indexOf('class="intro__body"'), index.indexOf('id="research-interests"'));
+  assert.equal((about.match(/<p>/g) || []).length, 3);
+  assert.equal((index.match(/class="resource-link"/g) || []).length, 4);
+  absent("arxiv.org");
+  absent("A real update you want to show.");
   absent("孔子");
   absent("論語");
   const publishedQuotes = JSON.parse(readFileSync(new URL("assets/data/quotes.json", site), "utf8"));
@@ -68,9 +127,12 @@ test("local assets and preserved pages are present, and drafts are not", () => {
   for (const relative of [
     "assets/css/style.css",
     "assets/css/font.css",
+    "assets/css/font_sans_serif.css",
+    "assets/fonts/nunito-latin-400-normal.woff2",
     "assets/js/quote-calendar.js",
     "assets/js/daily-quote.js",
     "assets/js/page-views.js",
+    "assets/js/list-controls.js",
     "assets/data/quotes.json",
     "assets/fonts/crimson-pro-latin-400-normal.woff2",
     "blog.html",
@@ -79,7 +141,11 @@ test("local assets and preserved pages are present, and drafts are not", () => {
   ]) {
     assert.equal(existsSync(new URL(relative, site)), true, relative);
   }
-  assert.match(readFileSync(new URL("blog.html", site), "utf8"), /这是博客。/);
+  const blog = readFileSync(new URL("blog.html", site), "utf8");
+  assert.match(blog, /To be soon/);
+  assert.match(blog, /href="\/blog\.html"/);
+  assert.equal(blog.includes("这是博客"), false);
+  assert.equal(blog.includes("tag-filter"), false);
   assert.match(readFileSync(new URL("resume.html", site), "utf8"), /这是简历/);
   assert.equal(existsSync(new URL("docs", site)), false);
   assert.equal(existsSync(new URL("legacy", site)), false);

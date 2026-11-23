@@ -1,0 +1,9 @@
+# Example only. This file is not published.
+# Real entries belong in _data/news.yml.
+# A row needs both date and text. url is optional.
+# Leave items empty to hide News and its navigation link.
+heading: News
+items:
+  - date: "2026.09"
+    text: "A real update you want to show."
+    url: https://example.com/news

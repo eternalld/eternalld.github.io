@@ -1,0 +1,10 @@
+# Example only. This file is not published.
+# Real awards belong in _data/awards.yml.
+# Leave items empty to show "To be soon" and no year buttons.
+heading: Awards & Honors
+items:
+  - year: "2026"
+    title: "Award name"
+    source: "Granting body"
+    source_url: https://example.com/award
+    scope: International

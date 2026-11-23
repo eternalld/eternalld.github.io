@@ -1,11 +1,18 @@
+<h2 id="curriculum" class="section-anchor">{{ site.data.curriculum.heading | default: "履历表" }}</h2>
 {% assign items = site.data.curriculum.items %}
 {% if items and items.size > 0 %}
-<h2 id="curriculum">{{ site.data.curriculum.heading | default: "履历表" }}</h2>
-<ul>
+<div class="card-list">
 {% for item in items %}
-<li>
-{% if item.period %}<strong>{{ item.period }}</strong> {% endif %}{{ item.title }}{% if item.organization %}, {{ item.organization }}{% endif %}{% if item.detail %} — {{ item.detail }}{% endif %}
-</li>
+<article class="entry-card">
+{% if item.period %}<p class="entry-year">{{ item.period }}</p>{% endif %}
+{% if item.organization %}<h3>{{ item.organization }}</h3>{% endif %}
+{% assign role = item.role | default: item.title %}
+{% if role %}<p>{{ role }}</p>{% endif %}
+{% if item.detail %}<p>{{ item.detail }}</p>{% endif %}
+{% if item.url and item.link_label %}<p><a href="{{ item.url }}">{{ item.link_label }}</a></p>{% endif %}
+</article>
 {% endfor %}
-</ul>
+</div>
+{% else %}
+<p class="empty-note">To be soon</p>
 {% endif %}
