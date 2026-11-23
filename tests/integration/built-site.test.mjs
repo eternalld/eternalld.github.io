@@ -13,7 +13,8 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<title>Haoxin Lyu<\/title>/);
   assert.match(index, /I am currently an algorithm engineer working on large language models \(LLMs\)\./);
   assert.equal(index.split("algorithm engineer").length - 1, 1);
-  assert.match(index, /Xu Teli talent class/);
+  assert.match(index, /Xu Teli Honors Program/);
+  absent("talent class");
   assert.match(index, /master[’']s degree in computing/);
   absent("徐特立");
   absent("Text / Image / Reference");

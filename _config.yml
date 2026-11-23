@@ -5,7 +5,7 @@ keywords: Haoxin Lyu
 canonical: https://eternalld.github.io/
 github_link: https://github.com/eternalld
 scholar_link: "https://scholar.google.com/citations?user=lMEcQNwAAAAJ&hl=zh-CN"
-bio: "I am currently an algorithm engineer working on large language models (LLMs). I earned my bachelor's degree in Computer Science and Technology in the Xu Teli talent class at Beijing Institute of Technology (BIT), where I also earned a master's degree in computing. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation, including text-conditioned, image-conditioned, and reference-guided generation."
+bio: "I am currently an algorithm engineer working on large language models (LLMs). I earned my bachelor's degree in Computer Science and Technology through the Xu Teli Honors Program at Beijing Institute of Technology (BIT), where I also earned a master's degree in computing. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation, including text-conditioned, image-conditioned, and reference-guided generation."
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 enable_footnote: true

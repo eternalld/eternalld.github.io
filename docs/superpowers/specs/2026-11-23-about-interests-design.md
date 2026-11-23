@@ -7,9 +7,9 @@ The wording below is the checked text for this pull request. Do not merge it fro
 
 About Me:
 
-I am currently an algorithm engineer working on large language models (LLMs). I earned my bachelor's degree in Computer Science and Technology in the Xu Teli talent class at Beijing Institute of Technology (BIT), where I also earned a master's degree in computing. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation, including text-conditioned, image-conditioned, and reference-guided generation.
+I am currently an algorithm engineer working on large language models (LLMs). I earned my bachelor's degree in Computer Science and Technology through the Xu Teli Honors Program at Beijing Institute of Technology (BIT), where I also earned a master's degree in computing. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation, including text-conditioned, image-conditioned, and reference-guided generation.
 
-"Xu Teli talent class" is a descriptive translation, not a confirmed official program name. The Chinese class name is not shown. "Computing" names the broad field only. RSI is not expanded. No employer, graduation year, or degree abbreviation is added.
+The user accepted "Xu Teli Honors Program." It is a natural translation supported by personal pages from the same university, not an official program title published by BIT. The Chinese class name is not shown. "Computing" names the broad field only. RSI is not expanded. No employer, graduation year, or degree abbreviation is added.
 
 Research Interests:
 
@@ -25,5 +25,6 @@ Personal Interests stays AI Agents for Quantitative Trading, separate from resea
 - Computer Science and Technology program page: https://isc.bit.edu.cn/schools/csat/introduction5/index.htm
 - https://xuteli.bit.edu.cn/english/ABOUTSX/Introductionsx/index.htm identifies the school, not this class name.
 - https://english.bit.edu.cn/2024-06/19/c_934606.htm uses "Xu Teli Talent Class" for a different program and does not establish this class's official English name.
+- The user accepted "Honors Program." Personal pages from the same university use that wording: https://wentaoguo.net/ and https://jessezzzzz.github.io/cv/
 - Post-training examples: https://www.microsoft.com/en-us/research/publication/agent-lightning-v1-0-towards-harnessed-agentic-rl/ and https://docs.nvidia.com/cosmos/2.2.0/predict1/diffusion/post_training_guide.html
 - Conditioning example: https://huggingface.co/docs/diffusers/en/using-diffusers/ip_adapter
