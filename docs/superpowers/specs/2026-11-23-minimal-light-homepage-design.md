@@ -82,7 +82,7 @@ The service is 不蒜子, documented at <https://ibruce.info/2015/04/04/busuanzi
 
 Busuanzi separates counts by hostname. `127.0.0.1` is a shared bucket already in the millions, so a localhost preview must not be described as this site's total. `eternalld.github.io` gets its own count, beginning with the first request the service records for that host.
 
-Only `site_pv` is displayed, and only after it is a positive integer. The sentence is `本站累计访问 N 次`. A control labeled `统计说明` discloses: the figure counts page views, not unique people; it starts when 不蒜子 first records this host and is not a historical total; the page requests `busuanzi.ibruce.info`, which can see IP address, page URL, and browser information and can set `busuanziId`; no other analytics service is used. The visible note `按页面浏览次数统计，非独立访客人数` is in the disclosure. The page must not say `第N位访客`.
+Only `site_pv` is displayed, and only after it is a positive integer. The sentence is `本站累计访问 N 次`. The page has no statistics disclosure control. The README keeps the note that this is a page-view count, not unique people, and names 不蒜子. The page must not say `第N位访客`.
 
 The widget stays hidden, with no spinner and no zero, when the script fails, times out after 4 seconds, returns a non-integer, returns zero or a negative number, or the feature is disabled with `pageviews: false`. There is no `localStorage` counter and no seeded number. Google Analytics is not configured. Font Awesome, Academicons, and Google Fonts are not loaded.
 

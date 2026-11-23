@@ -609,11 +609,6 @@ header ul {
   color: $color-muted;
   overflow-wrap: anywhere;
 
-  summary {
-    cursor: pointer;
-    color: $color-link;
-  }
-
   .pageviews__count {
     margin: 0;
   }

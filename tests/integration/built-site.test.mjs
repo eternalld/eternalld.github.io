@@ -30,9 +30,12 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /每日一句/);
   assert.match(index, /本站累计访问/);
   const counterStart = index.indexOf('id="busuanzi_container_site_pv"');
-  const summaryAt = index.indexOf("统计说明");
-  const counterEnd = index.indexOf("</div>", summaryAt);
-  assert.ok(counterStart !== -1 && counterStart < summaryAt && summaryAt < counterEnd);
+  const countAt = index.indexOf("本站累计访问");
+  const counterEnd = index.indexOf("</div>", countAt);
+  assert.ok(counterStart !== -1 && counterStart < countAt && countAt < counterEnd);
+  absent("统计说明");
+  absent("<details");
+  absent("按页面浏览次数统计，非独立访客人数");
   assert.match(index, /Powered by Jekyll and/);
   assert.match(index, /minimal-light/);
   absent("Your Name");
