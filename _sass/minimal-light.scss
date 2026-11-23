@@ -517,6 +517,7 @@ header ul {
   .site-masthead__inner {
     flex-wrap: wrap;
     align-items: flex-start;
+    gap: 0.75rem;
     width: calc(100% - 2rem);
     min-height: 0;
     padding: 0.9rem 0 0.75rem;
@@ -693,8 +694,8 @@ html {
 .site-masthead__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.25rem 2rem;
+  justify-content: flex-start;
+  gap: 6.625rem;
   width: min(960px, calc(100% - 2.5rem));
   margin: 0 auto;
   min-height: 4.4rem;
@@ -718,7 +719,7 @@ html {
 
 .site-masthead .section-nav {
   position: static;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -726,14 +727,20 @@ html {
 }
 
 .site-masthead .section-nav ul {
-  justify-content: flex-end;
-  gap: 0.55rem 1.7rem;
+  justify-content: flex-start;
+  gap: 0.45rem 2.35rem;
 }
 
 .site-masthead .section-nav a {
   color: #5f6368;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: 961px) {
+  .site-masthead .section-nav a {
+    font-size: 1.25rem;
+  }
 }
 
 .site-masthead .section-nav a:hover,
