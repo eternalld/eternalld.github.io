@@ -2,7 +2,8 @@ heading: Research Interests
 items:
   - title: Agent RSI
   - title: Post-Training for Agents and Generative Models
-  - title: Controllable Image and Video Generation (Text / Image / Reference Conditioning)
+  - title: Controllable Image and Video Generation
+    detail: Text-conditioned, image-conditioned, and reference-guided generation.
 personal_heading: Personal Interests
 personal_items:
   - title: AI Agents for Quantitative Trading

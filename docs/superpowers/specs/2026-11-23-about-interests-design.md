@@ -3,20 +3,27 @@
 Date: 2026-11-23
 Base: `main` at `e425829cf3c721d7bfd4583cb22dcd7e91aaf24b`
 
-The user confirmed this wording. Do not ask again, and do not merge.
+The wording below is the checked text for this pull request. Do not merge it from this change.
 
-About Me, in this order, with the role stated once:
+About Me:
 
-I am currently a large language model algorithm engineer. I received my bachelor's degree in Computer Science and Technology through the Xu Teli Honors Program (徐特立英才班) at Beijing Institute of Technology (BIT), where I also completed my master's degree in Computer Science. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation conditioned on text, images, and references.
+I am currently an algorithm engineer working on large language models (LLMs). I earned my bachelor's degree in Computer Science and Technology in the Xu Teli talent class at Beijing Institute of Technology (BIT), where I also earned a master's degree in computing. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation, including text-conditioned, image-conditioned, and reference-guided generation.
 
-The English program name is a descriptive translation. The Chinese name stays in parentheses. Do not add a company, graduation year, degree abbreviation, or an expansion of RSI.
+"Xu Teli talent class" is a descriptive translation, not a confirmed official program name. The Chinese class name is not shown. "Computing" names the broad field only. RSI is not expanded. No employer, graduation year, or degree abbreviation is added.
 
-Research Interests, in the main column after About Me:
+Research Interests:
 
 - Agent RSI
 - Post-Training for Agents and Generative Models
-- Controllable Image and Video Generation (Text / Image / Reference Conditioning)
+- Controllable Image and Video Generation: Text-conditioned, image-conditioned, and reference-guided generation.
 
-Personal Interests is a separate main-column section, not a sidebar block. Its only entry is AI Agents for Quantitative Trading. That topic is not a research interest.
+Personal Interests stays AI Agents for Quantitative Trading, separate from research interests.
 
-Use `bio` and `_data/interests.yml`. Add `personal_items` beside the existing research `items`. Leave papers, the quote list, the page-view line, the missing statistics disclosure, the empty 履历表, and any avatar setting untouched.
+## Term notes, not shown on the page
+
+- BIT's English name: https://english.bit.edu.cn/
+- Computer Science and Technology program page: https://isc.bit.edu.cn/schools/csat/introduction5/index.htm
+- https://xuteli.bit.edu.cn/english/ABOUTSX/Introductionsx/index.htm identifies the school, not this class name.
+- https://english.bit.edu.cn/2024-06/19/c_934606.htm uses "Xu Teli Talent Class" for a different program and does not establish this class's official English name.
+- Post-training examples: https://www.microsoft.com/en-us/research/publication/agent-lightning-v1-0-towards-harnessed-agentic-rl/ and https://docs.nvidia.com/cosmos/2.2.0/predict1/diffusion/post_training_guide.html
+- Conditioning example: https://huggingface.co/docs/diffusers/en/using-diffusers/ip_adapter

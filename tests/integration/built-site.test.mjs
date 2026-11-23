@@ -11,9 +11,12 @@ function absent(needle) {
 
 test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<title>Haoxin Lyu<\/title>/);
-  assert.match(index, /I am currently a large language model algorithm engineer\./);
-  assert.equal(index.split("large language model algorithm engineer").length - 1, 1);
-  assert.match(index, /Xu Teli Honors Program \(徐特立英才班\)/);
+  assert.match(index, /I am currently an algorithm engineer working on large language models \(LLMs\)\./);
+  assert.equal(index.split("algorithm engineer").length - 1, 1);
+  assert.match(index, /Xu Teli talent class/);
+  assert.match(index, /master[’']s degree in computing/);
+  absent("徐特立");
+  absent("Text / Image / Reference");
   assert.match(index, /<h2>Research Interests<\/h2>/);
   assert.match(index, /<h2>Personal Interests<\/h2>/);
   const researchAt = index.indexOf("<h2>Research Interests</h2>");
