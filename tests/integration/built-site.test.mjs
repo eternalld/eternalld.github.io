@@ -169,7 +169,12 @@ test("local assets and preserved pages are present, and drafts are not", () => {
   assert.match(readFileSync(new URL("resume.html", site), "utf8"), /这是简历/);
   assert.equal(existsSync(new URL("docs", site)), false);
   assert.equal(existsSync(new URL("legacy", site)), false);
-  assert.equal(existsSync(new URL("CNAME", site)), false);
+  assert.equal(readFileSync(new URL("CNAME", site), "utf8").trim(), "haoxinlyu.top");
+  assert.match(index, /rel="canonical" href="https:\/\/haoxinlyu\.top\/"/);
+  assert.match(blog, /rel="canonical" href="https:\/\/haoxinlyu\.top\/"/);
+  assert.equal(index.includes("https://eternalld.github.io/"), false);
+  assert.equal(blog.includes("https://eternalld.github.io/"), false);
+  absent("i.dmego.cn");
   assert.equal(readdirSync(new URL(".", site)).includes("tests"), false);
 });
 

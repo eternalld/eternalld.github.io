@@ -38,7 +38,7 @@ avatar: ./assets/img/avatar.jpg
 
 数字是页面浏览次数，不是独立访客人数。服务是不蒜子，脚本固定为 `https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js`。2026-11-23 核对的文件是 1939 字节，SHA-384 为 `oaKlriFiEaHzTKw66TKlzwgjYHPT5tvx+uf4JRnAGvP7HCHj5NPqEoAkyyOAPxZN`。该主机不返回 CORS 头，浏览器会因此拒绝带 integrity 的脚本，所以页面记录这个哈希，但不把 integrity 写进标签。页面只显示正整数的全站 `site_pv`，句子是「本站累计访问 N 次」，侧边栏不放「统计说明」。服务没有返回、超时、返回 0 或非整数时，整栏隐藏，不显示转圈或 0。
 
-计数按浏览器地址里的主机名分开。`eternalld.github.io` 从该服务第一次记录这个主机名开始，不代表更早的访问，也没有人为设定的初始值。在 `127.0.0.1` 上预览会看到很多人共用的本地计数，那不是这个网站的数字。请求发往 `busuanzi.ibruce.info`，对方可能收到 IP、页面地址和浏览器信息，并写入 `busuanziId` cookie。页面不再加载其他统计、字体托管或图标托管。
+计数按浏览器地址里的主机名分开。公开地址是 `https://haoxinlyu.top/`，计数从该服务第一次记录这个主机名开始，不代表更早的访问，也没有人为设定的初始值。在 `127.0.0.1` 上预览会看到很多人共用的本地计数，那不是这个网站的数字。请求发往 `busuanzi.ibruce.info`，对方可能收到 IP、页面地址和浏览器信息，并写入 `busuanziId` cookie。页面不再加载其他统计、字体托管或图标托管。
 
 ## 本地检查
 
@@ -56,7 +56,7 @@ npm run check:site
 
 - `/blog.html` 和 `/resume.html` 仍是原来的占位页，侧边栏不放入口。
 - `/404.html` 仍是原来的未找到页面。
-- 更换前的封面页、`i.dmego.cn` 的 CNAME、旧图标和 Dmego 说明在 `legacy/dmego-homepage/`。这个目录不会发布。GitHub Pages 当前没有绑定自定义域名，CNAME 留在网站根目录会指向别人的域名，所以不放回去。
+- 更换前的封面页、旧的 `i.dmego.cn` CNAME、旧图标和 Dmego 说明在 `legacy/dmego-homepage/`。这个目录不会发布。仓库根目录的 `CNAME` 已是 `haoxinlyu.top`，由 GitHub Pages 设置在提交 `e02196dd` 写入 `main`。公开地址是 `https://haoxinlyu.top/`。`https://www.haoxinlyu.top/` 和 `https://eternalld.github.io/` 会转到这个地址。账号设置里的 Pages 域名所有权验证还没有完成。
 
 ## 许可
 
