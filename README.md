@@ -17,13 +17,27 @@
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
-`bio` 可以用 Markdown。头像放在 `assets/img/`，再把路径写到 `avatar`。
+`bio` 可以用 Markdown。
+
+头像目前没有设置，页面也不会显示破图。照片上传到 `assets/img/avatar.jpg`：
+
+https://github.com/eternalld/eternalld.github.io/upload/main/assets/img
+
+上传时把文件名保持为 `avatar.jpg`。然后在 `_config.yml` 增加一行：
+
+```yaml
+avatar: ./assets/img/avatar.jpg
+```
+
+配置文件的编辑地址是 https://github.com/eternalld/eternalld.github.io/edit/main/_config.yml 。没有这行时，侧边栏不显示头像。
 
 ## 每日一句
 
-侧边栏在名字下面显示 `每日一句`。语料是 `assets/data/quotes.json` 里的 16 条《论语》，文字按 2026-11-23 从中文维基文库 wikitext 逐字抄录，`sourceLine` 保留整行，`text` 是「」内的原文。
+侧边栏标题仍是「每日一句」。句子只来自本地文件 `assets/data/quotes.json`，不请求外部名言接口。在 GitHub 上直接编辑：
 
-所有访客按 `Asia/Shanghai` 的公历日期看到同一条。序号是该日期的 UTC 日数对 16 取余。打开的页面会在上海时间下一次换日时自己换句子，不需要每天提交，也没有定时任务。引文、作者或 `https` 出处缺失时，这一栏不显示。
+https://github.com/eternalld/eternalld.github.io/edit/main/assets/data/quotes.json
+
+文件是一个 JSON 数组。现在只有一句 `all design is redesign`，页面就固定显示这一句，不显示作者或出处。要换成随机出现，就在这个数组里按同样的写法再加你自己的句子，每句用引号包起来，中间加逗号。两句及以上时，每次打开页面随机选一句。数组写成 `[]` 时，这一栏整段隐藏，不会出现空白或 undefined。不需要作者和出处；只有当你自己写上 `author`、`sourceTitle` 和 `https` 的 `sourceUrl` 时，出处才会出现。
 
 ## 访问次数
 

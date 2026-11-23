@@ -55,6 +55,10 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("font-awesome");
   absent("busuanzi_value_site_uv");
   absent("docs/examples");
+  absent("孔子");
+  absent("論語");
+  const publishedQuotes = JSON.parse(readFileSync(new URL("assets/data/quotes.json", site), "utf8"));
+  assert.deepEqual(publishedQuotes, ["all design is redesign"]);
 });
 
 test("local assets and preserved pages are present, and drafts are not", () => {

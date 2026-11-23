@@ -106,7 +106,11 @@ try {
   }, { timeout: 8000 });
   const quoteText = await desktop.$eval("[data-quote-text]", (node) => node.textContent);
   if (quoteText !== expected.quote.text) {
-    throw new Error("Desktop quote was " + JSON.stringify(quoteText) + " for " + expected.dateKey);
+    throw new Error("Desktop quote was " + JSON.stringify(quoteText));
+  }
+  const attribution = await desktop.$eval("#daily-quote", (node) => node.innerText);
+  if (attribution.includes("孔子") || attribution.includes("论语") || attribution.includes("論語")) {
+    throw new Error("Quote attribution was shown");
   }
   const overflow = await desktop.evaluate(() => (
     document.documentElement.scrollWidth > document.documentElement.clientWidth + 1
@@ -118,9 +122,9 @@ try {
   const focused = await tabSequence(desktop);
   const hrefs = focused.map((item) => item.href);
   const labels = focused.map((item) => item.label);
-  if (!hrefs.some((href) => href.includes("wikisource.org"))) throw new Error("Tab did not reach the quote source");
   if (!labels.includes("GitHub")) throw new Error("Tab did not reach GitHub");
-  await desktop.screenshot({ path: join(artifacts, "homepage_desktop_light.png"), fullPage: true });
+  if (hrefs.some((href) => href.includes("wikisource.org"))) throw new Error("Quote source link is still present");
+  await desktop.screenshot({ path: join(artifacts, "homepage_user_quote_desktop.png"), fullPage: true });
   await desktop.$eval("details", (node) => {
     node.open = true;
   });
@@ -147,7 +151,7 @@ try {
   if (phoneOverflow) throw new Error("Phone page overflows horizontally");
   const phoneQuote = await phone.$eval("[data-quote-text]", (node) => node.textContent);
   if (phoneQuote !== expected.quote.text) throw new Error("Phone quote mismatch");
-  await phone.screenshot({ path: join(artifacts, "homepage_phone_light.png"), fullPage: true });
+  await phone.screenshot({ path: join(artifacts, "homepage_user_quote_phone.png"), fullPage: true });
 
   const blocked = await openPage(browser, 1280, 900, true);
   await blocked.goto(base, { waitUntil: "domcontentloaded", timeout: 20000 });
