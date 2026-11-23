@@ -58,7 +58,10 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("gtms-eccv2024-fig1.png");
   absent("Fig. 1 from the ECVA PDF");
   absent("<figure");
-  assert.match(index, /aria-label="Google Scholar"/);
+  assert.match(index, />GitHub<\/span>/);
+  assert.match(index, />Google Scholar<\/span>/);
+  assert.equal(index.indexOf(">GitHub</span>") < index.indexOf(">Google Scholar</span>"), true);
+  assert.match(index, /aria-hidden="true"/);
   assert.match(index, /https:\/\/scholar\.google\.com\/citations\?user=lMEcQNwAAAAJ(?:&|&amp;)hl=zh-CN/);
   assert.match(index, /href="https:\/\/github\.com\/eternalld"/);
   absent("每日一句");

@@ -14,7 +14,10 @@ test("the homepage name is Haoxin Lyu and Scholar is linked exactly once", () =>
   assert.equal(config.includes("@"), false);
   assert.equal(config.includes("https://scholar.google.com/citations?user=lMEcQNwAAAAJ&hl=zh-CN"), true);
   assert.equal(layout.includes("site.scholar_link"), true);
-  assert.equal(layout.includes('aria-label="Google Scholar"'), true);
+  assert.equal(layout.includes(">Google Scholar</span>"), true);
+  assert.equal(layout.includes(">GitHub</span>"), true);
+  assert.equal(layout.indexOf(">GitHub</span>") < layout.indexOf(">Google Scholar</span>"), true);
+  assert.equal(layout.includes('aria-hidden="true"'), true);
   assert.match(config, /^github_link: https:\/\/github\.com\/eternalld$/m);
   assert.equal(layout.includes("site.github_link"), true);
 });
