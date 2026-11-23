@@ -23,6 +23,8 @@ test("the layout names Haoxin's GitHub link and only the Busuanzi counter", () =
   assert.equal(layout.includes("integrity="), false);
   assert.equal(layout.includes("crossorigin"), false);
   assert.equal(layout.includes("本站累计访问"), true);
-  assert.equal(layout.includes("按页面浏览次数统计，非独立访客人数"), true);
+  assert.equal(layout.includes("统计说明"), false);
+  assert.equal(layout.includes("<details"), false);
+  assert.equal(layout.includes("按页面浏览次数统计，非独立访客人数"), false);
   assert.equal(font.includes("fonts.googleapis.com"), false);
 });
