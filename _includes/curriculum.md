@@ -1,4 +1,4 @@
-<h2 id="curriculum" class="section-anchor">{{ site.data.curriculum.heading | default: "履历表" }}</h2>
+<h2 id="experience" class="section-anchor"><span id="curriculum"></span>{{ site.data.curriculum.heading | default: "Experience" }}</h2>
 {% assign items = site.data.curriculum.items %}
 {% if items and items.size > 0 %}
 <div class="card-list">

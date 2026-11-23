@@ -1,7 +1,7 @@
 # Example only. This file is not published.
 # Copy filled entries into _data/curriculum.yml.
-# With items empty, the public page shows the heading 履历表 and the text "To be soon".
-heading: 履历表
+# With items empty, the public page shows the heading Experience and the text "To be soon".
+heading: Experience
 items: []
 # One entry uses these fields and no sample job is stored here:
 # - period: ""

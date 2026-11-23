@@ -19,7 +19,6 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("About Me");
   assert.match(index, /<h2 id="blog" class="section-anchor">Blog<\/h2>/);
   assert.match(index, /<h2 id="awards" class="section-anchor">Awards &amp; Honors<\/h2>|Awards & Honors/);
-  absent("Experience");
   absent("Coming soon");
   absent("Wentao");
   absent("Selected");
@@ -39,9 +38,10 @@ test("the built homepage keeps identity and hides empty sections", () => {
   const publicationsAt = index.indexOf('id="publications"');
   const projectsAt = index.indexOf('id="projects"');
   const awardsAt = index.indexOf('id="awards"');
-  const curriculumAt = index.indexOf('id="curriculum"');
+  const experienceAt = index.indexOf('id="experience"');
   assert.ok(researchAt < personalAt && personalAt < newsAt && newsAt < blogAt && blogAt < publicationsAt);
-  assert.ok(publicationsAt < projectsAt && projectsAt < awardsAt && awardsAt < curriculumAt);
+  assert.ok(publicationsAt < projectsAt && projectsAt < awardsAt && awardsAt < experienceAt);
+  assert.ok(index.indexOf('id="curriculum"') > experienceAt);
   assert.equal(index.slice(researchAt, personalAt).includes("Quantitative"), false);
   assert.equal(index.slice(personalAt, publicationsAt).includes("AI Agents for Quantitative Trading"), true);
   assert.match(index, /End-to-End Story Visualization Framework/);
@@ -80,7 +80,9 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("example.com");
   absent("CVPR");
   absent("i.dmego.cn");
-  assert.match(index, /<h2 id="curriculum" class="section-anchor">履历表<\/h2>/);
+  assert.match(index, /<h2 id="experience" class="section-anchor"><span id="curriculum"><\/span>Experience<\/h2>/);
+  assert.match(index, /<h2 id="research-interests" class="section-anchor">Research Interests<\/h2>/);
+  assert.match(index, /<h2 id="personal-interests" class="section-anchor">Personal Interests<\/h2>/);
   absent("Services");
   absent("bit.edu.cn");
   absent("gmail.com");
@@ -95,9 +97,11 @@ test("the built homepage keeps identity and hides empty sections", () => {
   const navEnd = index.indexOf("</nav>", navStart);
   assert.ok(navStart !== -1 && navEnd > navStart);
   const nav = index.slice(navStart, navEnd);
-  for (const href of ["#research-interests", "#personal-interests", "#news", "/blog.html", "#publications", "#projects", "#awards", "#curriculum"]) {
-    assert.equal(nav.includes(href), true, href);
-  }
+  const labels = [...nav.matchAll(/>([^<]+)<\/a>/g)].map((match) => match[1]);
+  assert.deepEqual(labels, ["News", "Publications", "Experience", "Projects", "Awards", "Blog"]);
+  assert.equal(nav.includes("#research-interests"), false);
+  assert.equal(nav.includes("#personal-interests"), false);
+  assert.equal(nav.includes("#curriculum"), false);
   assert.equal(nav.includes("#about"), false);
   assert.equal(nav.includes("Selected"), false);
   assert.equal(nav.includes("Full"), false);

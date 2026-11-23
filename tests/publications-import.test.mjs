@@ -37,8 +37,8 @@ test("the two verified papers are editable data without citation counts or inven
   assert.equal(publications.includes("gmail.com"), false);
 });
 
-test("履历表 is the empty final section and is not a Services block", () => {
-  assert.match(curriculum, /^heading: 履历表$/m);
+test("Experience is the empty final section and is not a Services block", () => {
+  assert.match(curriculum, /^heading: Experience$/m);
   assert.match(curriculum, /^items: \[\]$/m);
   assert.equal(curriculum.includes("Services"), false);
   assert.ok(index.indexOf("publications.md") < index.indexOf("curriculum.md"));
