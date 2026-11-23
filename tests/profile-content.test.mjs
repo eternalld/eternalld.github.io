@@ -27,7 +27,9 @@ test("About Me uses the checked wording once for the role", () => {
 });
 
 test("quantitative trading stays out of the research list", () => {
-  assert.match(interests, /^heading: Research Interests$/m);
+  const intro = readFileSync(new URL("../_data/intro.yml", import.meta.url), "utf8");
+  assert.match(intro, /^ {2}- "Building AI systems that continually learn and improve"$/m);
+  assert.equal(intro.includes("Agents, Post-Training"), false);
   assert.equal(interests.includes("Agent RSI"), true);
   assert.equal(interests.includes("Post-Training for Agents and Generative Models"), true);
   assert.equal(interests.includes("Controllable Image and Video Generation"), true);

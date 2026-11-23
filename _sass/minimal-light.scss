@@ -816,11 +816,12 @@ html {
 
 .intro__title {
   margin: 0 auto;
-  max-width: 34rem;
+  max-width: min(34rem, 100%);
   color: $color-heading;
   font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.22;
+  overflow-wrap: anywhere;
 
   span {
     display: block;
