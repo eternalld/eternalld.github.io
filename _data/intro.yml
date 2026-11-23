@@ -1,7 +1,6 @@
 welcome: "Welcome, I'm Haoxin Lyu."
 title_lines:
-  - "Agents, Post-Training,"
-  - "and Controllable Generation"
+  - "Building AI systems that continually learn and improve"
 tags:
   - "Agent RSI"
   - "Agent & Generative Model Post-Training"
