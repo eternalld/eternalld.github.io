@@ -1,0 +1,11 @@
+# Example only. This file is not published.
+# Add the keys you want to _config.yml. Leave a key out to hide it.
+title: Haoxin
+position: "Role"
+affiliation: "Institution"
+affiliation_link: https://example.edu/
+email: name@example.edu
+bio: "A short biography in Markdown."
+avatar: ./assets/img/your-avatar.jpg
+github_link: https://github.com/eternalld
+pageviews: true

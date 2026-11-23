@@ -1,0 +1,11 @@
+# Example only. This file is not published.
+# Copy entries you want into _data/publications.yml.
+heading: Selected Publications
+items:
+  - title: "Paper title"
+    authors: "Author names"
+    venue: "Venue, year"
+    venue_short: "VENUE"
+    links:
+      - label: PDF
+        url: https://example.com/paper.pdf
