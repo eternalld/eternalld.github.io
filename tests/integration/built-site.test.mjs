@@ -19,7 +19,11 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /https:\/\/www\.ecva\.net\/papers\/eccv_2024\/papers_ECCV\/papers\/08341\.pdf/);
   assert.match(index, /Repository \(code pending\)/);
   assert.match(index, /<strong>Haoxin Lyu<\/strong>/);
-  assert.match(index, /gtms-eccv2024-fig1\.png/);
+  assert.match(index, /<abbr class="badge badge-static">ICASSP 2026<\/abbr>/);
+  assert.match(index, /<abbr class="badge badge-static">ECCV 2024<\/abbr>/);
+  absent("gtms-eccv2024-fig1.png");
+  absent("Fig. 1 from the ECVA PDF");
+  absent("<figure");
   assert.match(index, /aria-label="Google Scholar"/);
   assert.match(index, /https:\/\/scholar\.google\.com\/citations\?user=lMEcQNwAAAAJ(?:&|&amp;)hl=zh-CN/);
   assert.match(index, /href="https:\/\/github\.com\/eternalld"/);

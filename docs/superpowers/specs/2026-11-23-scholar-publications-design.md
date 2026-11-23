@@ -25,7 +25,7 @@ No citation counts. No Scholar refetch.
 
 ICASSP 2026 has full author names, pages 10492–10496, and the DOI. It has no verified public PDF, code, or thumbnail, so those links and the teaser are omitted.
 
-ECCV 2024 uses the conference year 2024, pages 288–304, the DOI, the ECVA PDF, and https://github.com/eternalld/GTMS labeled `Repository (code pending)`. The teaser is Fig. 1 from page 2 of that PDF, with alt text and a source line. Entries without an image keep the text-only row. Haoxin Lyu is bold in both author lists.
+ECCV 2024 uses the conference year 2024, pages 288–304, the DOI, the ECVA PDF, and https://github.com/eternalld/GTMS labeled `Repository (code pending)`. The page shows the conference badge only, with no figure or figure caption. Haoxin Lyu is bold in both author lists.
 
 ## Unchanged
 

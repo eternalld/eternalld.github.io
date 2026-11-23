@@ -21,9 +21,6 @@ items:
     title_url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08341.pdf
     venue: "European Conference on Computer Vision (ECCV) 2024, pp. 288–304."
     venue_short: "ECCV 2024"
-    image: ./assets/img/gtms-eccv2024-fig1.png
-    image_alt: "Figure 1 of GTMS (ECCV 2024), from page 2 of the ECVA PDF: the referring text and four panels for the image with a bounding box, structural forest, vertex weights, and pseudo label."
-    image_source: "Fig. 1 from the ECVA PDF, page 2."
     authors:
       - name: Haoxin Lyu
         highlight: true
