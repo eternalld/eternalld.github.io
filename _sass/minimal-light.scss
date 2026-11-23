@@ -637,6 +637,31 @@ header ul {
   vertical-align: -0.2rem;
 }
 
+.pub-teaser {
+  margin: 0 0 0.75rem;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: $color-muted;
+  }
+}
+
+.publications .title,
+.publications .author,
+.publications .periodical,
+.publications .links {
+  overflow-wrap: anywhere;
+}
+
 a:focus-visible,
 summary:focus-visible {
   outline: 2px solid $color-link;
@@ -670,7 +695,8 @@ summary:focus-visible {
     }
   }
 
-  .pageviews {
+  .pageviews,
+  .pub-teaser figcaption {
     color: $dark-text;
   }
 }

@@ -1,19 +1,21 @@
-# Haoxin
+# Haoxin Lyu
 
 个人学术主页，版式来自 [Minimal Light](https://github.com/yaoyao-liu/minimal-light)（commit `3786d5d480d2cfb1e384ae83bf43752998d78f80`，CC0）。主题说明保留在页面底部。
 
-已发布的身份只有名字 Haoxin 和 GitHub [eternalld](https://github.com/eternalld)。单位、简介、兴趣、论文和项目都先空着，空栏目不会出现在页面上。
+已发布的身份是名字 Haoxin Lyu、GitHub [eternalld](https://github.com/eternalld)，以及侧边栏里的 Google Scholar 链接。没有核实过的单位、职位、学历或邮箱都不会写上。没有条目的栏目不会出现。
 
 ## 编辑内容
 
 改这些文件，然后把 `main` 上的变更交给 GitHub Pages 构建：
 
-- `_config.yml`：名字、单位、职位、邮箱、简介、头像、GitHub 链接。不需要的项删掉整行。`pageviews: false` 会关掉访问次数。
-- `_data/interests.yml`：研究或个人兴趣。
-- `_data/publications.yml`：论文。
+- `_config.yml`：名字、单位、职位、简介、头像、GitHub 和 Scholar 链接。不需要的项删掉整行。`pageviews: false` 会关掉访问次数。
+- `_data/interests.yml`：研究或个人兴趣。推断出的题目不要写进来，除非本人确认。
+- `_data/news.yml`：近况。空着就不显示。
+- `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。
 - `_data/projects.yml`：项目或工程探索。
+- `_data/curriculum.yml`：标题必须是 `履历表`。这里留给以后的教育和工作经历。`items` 为空时，页面不显示这一栏，也不会出现示例职位。
 
-带示例条目的写法在 `docs/examples/`。那些文件不会被发布，里面的题目和链接都是占位，不是已有成果。
+带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
 `bio` 可以用 Markdown。头像放在 `assets/img/`，再把路径写到 `avatar`。
 

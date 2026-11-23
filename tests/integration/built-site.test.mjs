@@ -10,7 +10,18 @@ function absent(needle) {
 }
 
 test("the built homepage keeps identity and hides empty sections", () => {
-  assert.match(index, /<title>Haoxin<\/title>/);
+  assert.match(index, /<title>Haoxin Lyu<\/title>/);
+  assert.match(index, /story visualization with vision-language evaluation \(ICASSP 2026\)/);
+  assert.match(index, /mask-free referring image segmentation \(ECCV 2024\)/);
+  assert.match(index, /End-to-End Story Visualization Framework/);
+  assert.match(index, /GTMS: A Gradient-Driven Tree-Guided Mask-Free Referring Image Segmentation Method/);
+  assert.match(index, /https:\/\/doi\.org\/10\.1109\/icassp55912\.2026\.11464718/);
+  assert.match(index, /https:\/\/www\.ecva\.net\/papers\/eccv_2024\/papers_ECCV\/papers\/08341\.pdf/);
+  assert.match(index, /Repository \(code pending\)/);
+  assert.match(index, /<strong>Haoxin Lyu<\/strong>/);
+  assert.match(index, /gtms-eccv2024-fig1\.png/);
+  assert.match(index, /aria-label="Google Scholar"/);
+  assert.match(index, /https:\/\/scholar\.google\.com\/citations\?user=lMEcQNwAAAAJ(?:&|&amp;)hl=zh-CN/);
   assert.match(index, /href="https:\/\/github\.com\/eternalld"/);
   assert.match(index, /每日一句/);
   assert.match(index, /本站累计访问/);
@@ -28,9 +39,11 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("example.com");
   absent("CVPR");
   absent("i.dmego.cn");
-  absent("About Me");
-  absent("Selected Publications");
   absent("Research Interests");
+  absent("履历表");
+  absent("bit.edu.cn");
+  absent("gmail.com");
+  absent("Beijing Institute of Technology");
   absent(">Projects<");
   absent("位访客");
   absent("googletagmanager");

@@ -1,2 +1,38 @@
-heading: Selected Publications
-items: []
+heading: Publications
+items:
+  - title: "End-to-End Story Visualization Framework with Penalty-Based Evaluation using Vision-Language Models"
+    title_url: https://doi.org/10.1109/icassp55912.2026.11464718
+    venue: "ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 10492–10496."
+    venue_short: "ICASSP 2026"
+    authors:
+      - name: Lizheng Zu
+      - name: Yaoqing Jin
+      - name: Siyi Cao
+      - name: Shiwei Suo
+      - name: Haoxin Lyu
+        highlight: true
+      - name: Song Fu
+      - name: Hui Sun
+      - name: Hao Zhang
+    links:
+      - label: DOI
+        url: https://doi.org/10.1109/icassp55912.2026.11464718
+  - title: "GTMS: A Gradient-Driven Tree-Guided Mask-Free Referring Image Segmentation Method"
+    title_url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08341.pdf
+    venue: "European Conference on Computer Vision (ECCV) 2024, pp. 288–304."
+    venue_short: "ECCV 2024"
+    image: ./assets/img/gtms-eccv2024-fig1.png
+    image_alt: "Figure 1 of GTMS (ECCV 2024), from page 2 of the ECVA PDF: the referring text and four panels for the image with a bounding box, structural forest, vertex weights, and pseudo label."
+    image_source: "Fig. 1 from the ECVA PDF, page 2."
+    authors:
+      - name: Haoxin Lyu
+        highlight: true
+      - name: Tianxiong Zhong
+      - name: Sanyuan Zhao
+    links:
+      - label: PDF
+        url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08341.pdf
+      - label: DOI
+        url: https://doi.org/10.1007/978-3-031-72848-8_17
+      - label: Repository (code pending)
+        url: https://github.com/eternalld/GTMS
