@@ -28,6 +28,10 @@ test("the two verified papers are editable data without citation counts or inven
   assert.equal(publications.includes("https://github.com/eternalld/GTMS"), true);
   assert.equal(publications.includes("Repository (code pending)"), true);
   assert.equal(publications.includes("Haoxin Lyu"), true);
+  assert.equal(publications.includes("ICASSP 2026"), true);
+  assert.equal(publications.includes("ECCV 2024"), true);
+  assert.equal(publications.includes("image:"), false);
+  assert.equal(publications.includes("Fig. 1"), false);
   assert.equal(publications.includes("citation"), false);
   assert.equal(publications.includes("bit.edu.cn"), false);
   assert.equal(publications.includes("gmail.com"), false);

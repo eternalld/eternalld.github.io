@@ -5,12 +5,6 @@
 <ol class="bibliography">
 {% for link in items %}
 <li>
-{% if link.image %}
-<figure class="pub-teaser">
-  <img src="{{ link.image }}" alt="{{ link.image_alt | escape }}" loading="lazy">
-  {% if link.image_source %}<figcaption>{{ link.image_source }}</figcaption>{% endif %}
-</figure>
-{% endif %}
 <div class="pub-row">
   <div class="col-sm-3 abbr no-teaser">
     {% if link.venue_short %}

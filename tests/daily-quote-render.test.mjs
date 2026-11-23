@@ -22,6 +22,7 @@ function element(id) {
 test("fills the quote block and keeps an incomplete result hidden", () => {
   const root = element("daily-quote");
   root.children["[data-quote-text]"] = element("text");
+  root.children["[data-quote-by]"] = element("by");
   root.children["[data-quote-author]"] = element("author");
   root.children["[data-quote-source]"] = element("source");
 
@@ -30,19 +31,15 @@ test("fills the quote block and keeps an incomplete result hidden", () => {
   assert.equal(root.children["[data-quote-text]"].textContent, "");
 
   const ok = daily.renderDailyQuote(root, {
-    dateKey: "2026-11-23",
     index: 0,
-    quote: {
-      text: "君子不器。",
-      author: "孔子",
-      sourceTitle: "《論語·爲政》",
-      sourceUrl: "https://zh.wikisource.org/wiki/論語/為政第二#二之十二",
-    },
+    quote: { text: "all design is redesign" },
   });
   assert.equal(ok, true);
   assert.equal(root.hidden, false);
-  assert.equal(root.children["[data-quote-text]"].textContent, "君子不器。");
-  assert.equal(root.children["[data-quote-author]"].textContent, "孔子");
-  assert.equal(root.children["[data-quote-source]"].textContent, "《論語·爲政》");
-  assert.equal(root.children["[data-quote-source]"].href, "https://zh.wikisource.org/wiki/論語/為政第二#二之十二");
+  assert.equal(root.children["[data-quote-text]"].textContent, "all design is redesign");
+  assert.equal(root.children["[data-quote-by]"].hidden, true);
+  assert.equal(root.children["[data-quote-author]"].textContent, "");
+  assert.equal(root.children["[data-quote-source]"].textContent, "");
+  assert.equal(root.children["[data-quote-source]"].hidden, true);
+  assert.equal(root.children["[data-quote-author]"].textContent.includes("undefined"), false);
 });
