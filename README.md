@@ -2,7 +2,7 @@
 
 个人学术主页，版式来自 [Minimal Light](https://github.com/yaoyao-liu/minimal-light)（commit `3786d5d480d2cfb1e384ae83bf43752998d78f80`，CC0）。主题说明保留在页面底部。阅读栏使用 Nunito，许可见 `assets/fonts/nunito-OFL.txt`。
 
-已发布的身份是名字 Haoxin Lyu、GitHub [eternalld](https://github.com/eternalld)，以及侧边栏里的 Google Scholar 链接。没有核实过的单位、职位、学历或邮箱都不会写上。还没有条目的 News、Blog、Projects、Awards & Honors 和履历表会显示 “To be soon”，不会用示例冒充真实内容。
+已发布的身份是名字 Haoxin Lyu、GitHub [eternalld](https://github.com/eternalld)，以及侧边栏里的 Google Scholar 链接。没有核实过的单位、职位、学历或邮箱都不会写上。还没有条目的 News、Blog、Projects、Awards & Honors 和 Experience 会显示 “To be soon”，不会用示例冒充真实内容。
 
 ## 编辑内容
 
@@ -15,12 +15,12 @@
 - `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。页面保持紧凑文本和会议标签，不做 Selected/Full 切换。
 - `_data/projects.yml`：项目。字段是 `title`、`year`、`summary`、`links`（`label` 和 `url`）。文件顺序就是显示顺序，新的放前面。超过 4 条时出现展开/收起。没有条目时显示 “To be soon”，不出现按钮。
 - `_data/awards.yml`：奖项。字段是 `year`、`title`、`source`、`source_url`、`scope`。至少两个不同年份时才显示年份按钮。没有条目时显示 “To be soon”。
-- `_data/curriculum.yml`：标题必须是 `履历表`，放在最后。字段是 `period`、`organization`、`role`、`detail`，可选 `url` 和 `link_label`。没有条目时显示 “To be soon”。
-- 顶部导航不用单独配置。Blog 指向 `/blog.html`，其余指向首页对应栏目。
+- `_data/curriculum.yml`：标题是 `Experience`，放在最后。字段是 `period`、`organization`、`role`、`detail`，可选 `url` 和 `link_label`。没有条目时显示 “To be soon”。旧地址 `#curriculum` 仍停在这一节，导航里不再单列。
+- 顶部导航固定为 News、Publications、Experience、Projects、Awards、Blog。Blog 指向 `/blog.html`，其余指向首页对应栏目。Research Interests 和 Personal Interests 留在正文里，不放进导航。
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
-`bio` 可以用 Markdown。首屏欢迎语、两行题目和三个方向标签在 `_data/intro.yml`。页面没有单独的 About Me 标题。履历栏的名字保持为履历表，不叫 Experience 或 Services。字段示例在 `docs/examples/`，不会发布。
+`bio` 可以用 Markdown。首屏欢迎语、两行题目和三个方向标签在 `_data/intro.yml`。页面没有单独的 About Me 标题。原先的履历表现在标题是 Experience。字段示例在 `docs/examples/`，不会发布。
 
 头像目前没有设置，页面也不会显示破图。照片上传到 `assets/img/avatar.jpg`：
 

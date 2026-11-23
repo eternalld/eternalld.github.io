@@ -677,10 +677,21 @@ html {
   a {
     color: $color-heading;
     font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
 
     &:hover {
       color: $color-link;
+    }
+  }
+
+  @media screen and (min-width: 961px) {
+    ul {
+      flex-wrap: nowrap;
+    }
+
+    a {
+      white-space: nowrap;
     }
   }
 

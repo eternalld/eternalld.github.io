@@ -13,12 +13,13 @@ const sample = readFileSync(new URL("../docs/examples/news.sample.yml", import.m
 
 test("the top nav points at the visible sections and the blog page", () => {
   assert.equal(layout.includes("section-nav.md"), true);
-  for (const href of ["#research-interests", "#personal-interests", "#news", "/blog.html", "#publications", "#projects", "#awards", "#curriculum"]) {
-    assert.equal(nav.includes(`href="${href}"`) || nav.includes(`href="/${href}"`), true, href);
-  }
-  assert.equal(nav.includes("履历表"), true);
+  const labels = [...nav.matchAll(/>([^<]+)<\/a>/g)].map((match) => match[1]);
+  assert.deepEqual(labels, ["News", "Publications", "Experience", "Projects", "Awards", "Blog"]);
+  assert.equal(nav.includes("#research-interests"), false);
+  assert.equal(nav.includes("#personal-interests"), false);
+  assert.equal(nav.includes("#curriculum"), false);
+  assert.equal(nav.includes("履历表"), false);
   assert.equal(nav.includes('href="#about"'), false);
-  assert.equal(nav.includes("Experience"), false);
   assert.equal(nav.includes("Services"), false);
   assert.match(nav, /<nav[^>]*aria-label="On this page"/);
   assert.equal(nav.includes("Selected"), false);
