@@ -11,6 +11,8 @@ bio: |
   I earned my bachelor's degree in Computer Science and Technology through the Xu Teli Honors Program at Beijing Institute of Technology (BIT), where I also earned a master's degree in computing.
 
   My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation, including text-conditioned, image-conditioned, and reference-guided generation.
+
+  I am also interested in AI agents for quantitative trading.
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 enable_footnote: true

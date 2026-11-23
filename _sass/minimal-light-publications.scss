@@ -44,7 +44,60 @@ blockquote {
 }
 
 .publications-heading {
-  margin: 2.1rem 0 0.8rem;
+  margin: 2.4rem 0 0.65rem;
+}
+
+.publications-compact {
+  margin-top: 0.35rem;
+}
+
+.pub-compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0 0 1.15rem;
+  }
+
+  .badge {
+    display: inline-block;
+    position: static;
+    margin: 0 0.45rem 0.15rem 0;
+    padding: 0.18em 0.5em;
+    background-color: var(--global-theme-color);
+    color: #fff !important;
+    font-size: 0.72rem;
+    vertical-align: 0.15em;
+    box-shadow: none;
+  }
+}
+
+.pub-compact__lead,
+.pub-compact__authors,
+.pub-compact__venue,
+.pub-compact__links {
+  margin: 0;
+}
+
+.pub-compact__lead {
+  line-height: 1.45;
+}
+
+.pub-compact__title {
+  font-weight: 700;
+}
+
+.pub-compact__authors,
+.pub-compact__venue {
+  margin-top: 0.2rem;
+}
+
+.pub-compact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.3rem;
 }
 
 .publications {

@@ -9,14 +9,14 @@
 改这些文件，然后把 `main` 上的变更交给 GitHub Pages 构建：
 
 - `_config.yml`：名字、单位、职位、简介、头像、GitHub 和 Scholar 链接。不需要的项删掉整行。`pageviews: false` 会关掉访问次数。
-- `_data/interests.yml`：`items` 是 Research Interests，`personal_items` 是主栏里单独的 Personal Interests。量化交易放在 `personal_items`。
+- `_data/interests.yml`：`items` 是正文里的 Research Interests，不放进顶部导航。量化交易不单列小节，写在 `_config.yml` 简介最后一句。
 - `_data/news.yml`：近况。每条要有 `date`（建议 `2026.09`）和 `text`，`url` 可选。页面按日期从新到旧排在浅色可滚动列表里。没有合格条目时显示 “To be soon”。
 - `_data/posts.yml`：博客。字段是 `date`、`title`、`summary`、`url`、`tags`。首页最多预览两条，完整列表在 `/blog.html`。有标签时那里才出现标签筛选。没有文章时两处都显示 “To be soon”，`All posts` 仍指向这个真实页面。原先的 `blog.html` 只有“这是博客。”，没有可复用的文章。
-- `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。页面保持紧凑文本和会议标签，不做 Selected/Full 切换。
+- `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。每条按会议标记、标题、作者、会议信息、资源链接排成一列，不做 Selected/Full 切换，也不加共同一作或通讯标记。
 - `_data/projects.yml`：项目。字段是 `title`、`year`、`summary`、`links`（`label` 和 `url`）。文件顺序就是显示顺序，新的放前面。超过 4 条时出现展开/收起。没有条目时显示 “To be soon”，不出现按钮。
 - `_data/awards.yml`：奖项。字段是 `year`、`title`、`source`、`source_url`、`scope`。至少两个不同年份时才显示年份按钮。没有条目时显示 “To be soon”。
 - `_data/curriculum.yml`：标题是 `Experience`，放在最后。字段是 `period`、`organization`、`role`、`detail`，可选 `url` 和 `link_label`。没有条目时显示 “To be soon”。旧地址 `#curriculum` 仍停在这一节，导航里不再单列。
-- 顶部导航固定为 News、Publications、Experience、Projects、Awards、Blog。Blog 指向 `/blog.html`，其余指向首页对应栏目。Research Interests 和 Personal Interests 留在正文里，不放进导航。
+- 顶部导航固定为 News、Publications、Experience、Projects、Awards、Blog。Blog 指向 `/blog.html`，其余指向首页对应栏目。Research Interests 留在正文里，不放进导航。页面不再单列 Personal Interests。
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
