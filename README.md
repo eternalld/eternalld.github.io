@@ -9,7 +9,7 @@
 改这些文件，然后把 `main` 上的变更交给 GitHub Pages 构建：
 
 - `_config.yml`：名字、单位、职位、简介、头像、GitHub 和 Scholar 链接。不需要的项删掉整行。`pageviews: false` 会关掉访问次数。
-- `_data/interests.yml`：研究或个人兴趣。推断出的题目不要写进来，除非本人确认。
+- `_data/interests.yml`：`items` 是 Research Interests，`personal_items` 是主栏里单独的 Personal Interests。量化交易放在 `personal_items`。
 - `_data/news.yml`：近况。空着就不显示。
 - `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。
 - `_data/projects.yml`：项目或工程探索。

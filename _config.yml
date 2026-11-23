@@ -5,7 +5,7 @@ keywords: Haoxin Lyu
 canonical: https://eternalld.github.io/
 github_link: https://github.com/eternalld
 scholar_link: "https://scholar.google.com/citations?user=lMEcQNwAAAAJ&hl=zh-CN"
-bio: "The publications listed below cover story visualization with vision-language evaluation (ICASSP 2026) and mask-free referring image segmentation (ECCV 2024)."
+bio: "I am currently a large language model algorithm engineer. I received my bachelor's degree in Computer Science and Technology through the Xu Teli Honors Program (徐特立英才班) at Beijing Institute of Technology (BIT), where I also completed my master's degree in Computer Science. My work focuses on Agent RSI, post-training for agents and generative models, and controllable image and video generation conditioned on text, images, and references."
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 enable_footnote: true

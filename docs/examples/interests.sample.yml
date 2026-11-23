@@ -2,5 +2,7 @@
 # Copy entries you want into _data/interests.yml.
 heading: Research Interests
 items:
-  - title: "Topic"
-    detail: "One clause in your own words."
+  - title: "Research topic"
+personal_heading: Personal Interests
+personal_items:
+  - title: "Personal topic"

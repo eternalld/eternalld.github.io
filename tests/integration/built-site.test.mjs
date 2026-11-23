@@ -11,8 +11,17 @@ function absent(needle) {
 
 test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<title>Haoxin Lyu<\/title>/);
-  assert.match(index, /story visualization with vision-language evaluation \(ICASSP 2026\)/);
-  assert.match(index, /mask-free referring image segmentation \(ECCV 2024\)/);
+  assert.match(index, /I am currently a large language model algorithm engineer\./);
+  assert.equal(index.split("large language model algorithm engineer").length - 1, 1);
+  assert.match(index, /Xu Teli Honors Program \(徐特立英才班\)/);
+  assert.match(index, /<h2>Research Interests<\/h2>/);
+  assert.match(index, /<h2>Personal Interests<\/h2>/);
+  const researchAt = index.indexOf("<h2>Research Interests</h2>");
+  const personalAt = index.indexOf("<h2>Personal Interests</h2>");
+  const publicationsAt = index.indexOf('id="publications"');
+  assert.ok(researchAt < personalAt && personalAt < publicationsAt);
+  assert.equal(index.slice(researchAt, personalAt).includes("Quantitative"), false);
+  assert.equal(index.slice(personalAt, publicationsAt).includes("AI Agents for Quantitative Trading"), true);
   assert.match(index, /End-to-End Story Visualization Framework/);
   assert.match(index, /GTMS: A Gradient-Driven Tree-Guided Mask-Free Referring Image Segmentation Method/);
   assert.match(index, /https:\/\/doi\.org\/10\.1109\/icassp55912\.2026\.11464718/);
@@ -46,11 +55,9 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("example.com");
   absent("CVPR");
   absent("i.dmego.cn");
-  absent("Research Interests");
   absent("履历表");
   absent("bit.edu.cn");
   absent("gmail.com");
-  absent("Beijing Institute of Technology");
   absent(">Projects<");
   absent("位访客");
   absent("googletagmanager");
