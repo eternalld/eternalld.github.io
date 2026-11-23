@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <title>{% if site.affiliation %}{{ site.title }} | {{ site.affiliation }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    {% if site.keywords %}
+    <meta name="keywords" content="{{ site.keywords }}">
+    {% endif %}
+    {% if site.canonical %}
+    <link rel="canonical" href="{{ site.canonical }}">
+    {% endif %}
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="{{ site.favicon_dark }}" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="{{ site.favicon }}" type="image/png">
+    <script src="./assets/js/favicon-switcher.js" defer></script>
+    {% if site.font == "Sans Serif" %}
+    <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
+    {% else %}
+    <link rel="stylesheet" href="./assets/css/font.css">
+    {% endif %}
+    {% if site.auto_dark_mode %}
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/publications.css">
+    {% else %}
+    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
+    <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
+    {% endif %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        {% if site.avatar %}
+        <a class="image avatar"><img src="{{ site.avatar }}" alt=""></a>
+        {% endif %}
+        <h1>{{ site.title }}</h1>
+        {% if site.position %}
+        <position>{{ site.position }}</position>
+        <br>
+        {% endif %}
+        {% if site.affiliation %}
+        {% if site.affiliation_link %}
+        <a href="{{ site.affiliation_link }}" rel="noopener noreferrer"><autocolor>{{ site.affiliation }}</autocolor></a>
+        {% else %}
+        <autocolor>{{ site.affiliation }}</autocolor>
+        {% endif %}
+        <br>
+        {% endif %}
+        {% if site.email %}
+        <email>{{ site.email }}</email>
+        {% endif %}
+
+        <div id="daily-quote" class="daily-quote" data-quotes="./assets/data/quotes.json" hidden>
+          <p class="daily-quote__label">每日一句</p>
+          <blockquote class="daily-quote__text" data-quote-text lang="zh-Hant"></blockquote>
+          <p class="daily-quote__by">
+            <span data-quote-author></span>
+            <a data-quote-source href="" rel="noopener noreferrer"></a>
+          </p>
+        </div>
+
+        {% if site.pageviews %}
+        <div id="busuanzi_container_site_pv" class="pageviews" hidden>
+          <p class="pageviews__count">本站累计访问 <span id="busuanzi_value_site_pv"></span> 次</p>
+          <details class="pageviews__details">
+            <summary>统计说明</summary>
+            <p>按页面浏览次数统计，非独立访客人数。次数由不蒜子（busuanzi.ibruce.info）按页面浏览累计，自该服务开始记录本站起算，不能代表更早的访问。打开页面会向该服务发送请求，对方可能收到 IP 地址、来源网址和浏览器信息，并可能写入名为 busuanziId 的 cookie。本页不使用其他统计服务。</p>
+          </details>
+        </div>
+        {% endif %}
+
+        <div class="social-icons">
+          {% if site.github_link %}
+          <a href="{{ site.github_link }}" aria-label="GitHub" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 4.77c.68 0 1.36.09 2 .26 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+          </a>
+          {% endif %}
+        </div>
+      </header>
+      <section>
+        {{ content }}
+        {% if site.enable_footnote %}
+        <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" rel="noopener noreferrer">Minimal Light</a> theme.</small></p>
+        {% endif %}
+      </section>
+      <footer></footer>
+    </div>
+    <script src="./assets/js/quote-calendar.js" defer></script>
+    <script src="./assets/js/daily-quote.js" defer></script>
+    <script src="./assets/js/page-views.js" defer></script>
+    {% if site.pageviews %}
+    <!-- Reviewed 2026-11-23 from https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js (1939 bytes, sha384-oaKlriFiEaHzTKw66TKlzwgjYHPT5tvx+uf4JRnAGvP7HCHj5NPqEoAkyyOAPxZN). That host sends no CORS header, so a browser cannot enforce the hash without blocking the documented script. -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    {% endif %}
+  </body>
+</html>

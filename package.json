@@ -1,21 +1,18 @@
 {
-  "name": "dmego-home-page",
-  "version": "1.0.5",
-  "description": "Dmego Home Page",
+  "name": "haoxin-homepage",
+  "private": true,
+  "description": "Academic homepage for Haoxin.",
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "bundle exec jekyll build",
+    "check:site": "node --test tests/integration/built-site.test.mjs",
+    "check": "npm test && npm run build && npm run check:site"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dmego/home.github.io.git"
-  },
-  "keywords": [
-    "Dmego",
-    "HomePage"
-  ],
-  "author": "Dmego",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dmego/home.github.io/issues"
+  "engines": {
+    "node": ">=22"
   },
-  "homepage": "https://github.com/dmego/home.github.io#readme"
+  "devDependencies": {
+    "puppeteer-core": "^24.30.0"
+  }
 }

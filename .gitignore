@@ -18,3 +18,12 @@ analytics*
 .well-known/
 .well-known@
 .well-known*
+
+# Build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+node_modules/

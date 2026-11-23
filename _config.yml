@@ -1,0 +1,27 @@
+title: Haoxin
+lang: zh-CN
+description: Haoxin
+keywords: Haoxin
+canonical: https://eternalld.github.io/
+github_link: https://github.com/eternalld
+favicon: ./assets/img/favicon.png
+favicon_dark: ./assets/img/favicon-dark.png
+enable_footnote: true
+auto_dark_mode: true
+font: "Serif"
+pageviews: true
+
+exclude:
+  - docs/
+  - legacy/
+  - tests/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - README.md
+  - licenses/
+  - .gitignore
+  - .bundle/

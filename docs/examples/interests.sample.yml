@@ -1,0 +1,6 @@
+# Example only. This file is not published.
+# Copy entries you want into _data/interests.yml.
+heading: Research Interests
+items:
+  - title: "Topic"
+    detail: "One clause in your own words."
