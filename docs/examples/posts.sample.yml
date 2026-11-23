@@ -1,0 +1,10 @@
+# Example only. This file is not published.
+# Real posts belong in _data/posts.yml.
+# Leave items empty to show "To be soon" and no tag buttons.
+items:
+  - date: "2026.11.23"
+    title: "Post title"
+    summary: "A short summary."
+    url: https://example.com/post
+    tags:
+      - robotics

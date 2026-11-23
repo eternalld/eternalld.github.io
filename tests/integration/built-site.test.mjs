@@ -17,9 +17,10 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /and Controllable Generation/);
   assert.match(index, /Agent &amp; Generative Model Post-Training|Agent & Generative Model Post-Training/);
   absent("About Me");
-  absent(">Blog<");
-  absent("Awards");
+  assert.match(index, /<h2 id="blog" class="section-anchor">Blog<\/h2>/);
+  assert.match(index, /<h2 id="awards" class="section-anchor">Awards &amp; Honors<\/h2>|Awards & Honors/);
   absent("Experience");
+  absent("Coming soon");
   absent("Wentao");
   absent("Selected");
   absent("Full list");
@@ -33,8 +34,14 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<h2 id="personal-interests" class="section-anchor">Personal Interests<\/h2>/);
   const researchAt = index.indexOf('id="research-interests"');
   const personalAt = index.indexOf('id="personal-interests"');
+  const newsAt = index.indexOf('id="news"');
+  const blogAt = index.indexOf('id="blog"');
   const publicationsAt = index.indexOf('id="publications"');
-  assert.ok(researchAt < personalAt && personalAt < publicationsAt);
+  const projectsAt = index.indexOf('id="projects"');
+  const awardsAt = index.indexOf('id="awards"');
+  const curriculumAt = index.indexOf('id="curriculum"');
+  assert.ok(researchAt < personalAt && personalAt < newsAt && newsAt < blogAt && blogAt < publicationsAt);
+  assert.ok(publicationsAt < projectsAt && projectsAt < awardsAt && awardsAt < curriculumAt);
   assert.equal(index.slice(researchAt, personalAt).includes("Quantitative"), false);
   assert.equal(index.slice(personalAt, publicationsAt).includes("AI Agents for Quantitative Trading"), true);
   assert.match(index, /End-to-End Story Visualization Framework/);
@@ -73,10 +80,11 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("example.com");
   absent("CVPR");
   absent("i.dmego.cn");
-  absent("履历表");
+  assert.match(index, /<h2 id="curriculum" class="section-anchor">履历表<\/h2>/);
+  absent("Services");
   absent("bit.edu.cn");
   absent("gmail.com");
-  absent(">Projects<");
+  assert.match(index, /<h2 id="projects" class="section-anchor">Projects<\/h2>/);
   absent("位访客");
   absent("googletagmanager");
   absent("fonts.googleapis.com");
@@ -87,18 +95,19 @@ test("the built homepage keeps identity and hides empty sections", () => {
   const navEnd = index.indexOf("</nav>", navStart);
   assert.ok(navStart !== -1 && navEnd > navStart);
   const nav = index.slice(navStart, navEnd);
-  for (const href of ["#research-interests", "#personal-interests", "#publications"]) {
-    assert.equal(nav.includes(`href="${href}"`), true, href);
+  for (const href of ["#research-interests", "#personal-interests", "#news", "/blog.html", "#publications", "#projects", "#awards", "#curriculum"]) {
+    assert.equal(nav.includes(href), true, href);
   }
   assert.equal(nav.includes("#about"), false);
-  assert.equal(nav.includes("#news"), false);
-  assert.equal(nav.includes("#projects"), false);
-  assert.equal(nav.includes("#curriculum"), false);
   assert.equal(nav.includes("Selected"), false);
   assert.equal(nav.includes("Full"), false);
   absent('type="search"');
-  absent('id="news"');
-  absent(">News<");
+  assert.match(index, /id="news"/);
+  assert.match(index, />News</);
+  absent("Show fewer");
+  absent("data-year-button");
+  absent("tag-filter");
+  assert.equal((index.match(/To be soon/g) || []).length, 5);
   absent('id="about"');
   assert.match(index, /id="research-interests"/);
   assert.match(index, /id="personal-interests"/);
@@ -123,6 +132,7 @@ test("local assets and preserved pages are present, and drafts are not", () => {
     "assets/js/quote-calendar.js",
     "assets/js/daily-quote.js",
     "assets/js/page-views.js",
+    "assets/js/list-controls.js",
     "assets/data/quotes.json",
     "assets/fonts/crimson-pro-latin-400-normal.woff2",
     "blog.html",
@@ -131,7 +141,11 @@ test("local assets and preserved pages are present, and drafts are not", () => {
   ]) {
     assert.equal(existsSync(new URL(relative, site)), true, relative);
   }
-  assert.match(readFileSync(new URL("blog.html", site), "utf8"), /这是博客。/);
+  const blog = readFileSync(new URL("blog.html", site), "utf8");
+  assert.match(blog, /To be soon/);
+  assert.match(blog, /href="\/blog\.html"/);
+  assert.equal(blog.includes("这是博客"), false);
+  assert.equal(blog.includes("tag-filter"), false);
   assert.match(readFileSync(new URL("resume.html", site), "utf8"), /这是简历/);
   assert.equal(existsSync(new URL("docs", site)), false);
   assert.equal(existsSync(new URL("legacy", site)), false);

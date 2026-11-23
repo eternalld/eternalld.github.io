@@ -640,6 +640,7 @@ header ul {
 }
 
 a:focus-visible,
+button:focus-visible,
 summary:focus-visible {
   outline: 2px solid $color-link;
   outline-offset: 2px;
@@ -652,7 +653,7 @@ section a:focus-visible {
 }
 
 html {
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 9rem;
 }
 
 .section-nav {
@@ -755,7 +756,7 @@ html {
 }
 
 h2.section-anchor {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 9rem;
   margin: 2.1rem 0 0.8rem;
   padding-bottom: 0.45rem;
   border-bottom: 1px solid #f2f3f3;
@@ -764,9 +765,27 @@ h2.section-anchor {
   font-weight: 700;
 }
 
+.empty-note {
+  margin: 0 0 1rem;
+  color: $color-text;
+}
+
+.news-box {
+  max-height: 220px;
+  overflow-y: auto;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem 0.85rem;
+  background: #f6f4ff;
+  border-radius: 10px;
+
+  @include dark {
+    background: rgba(196, 184, 255, 0.1);
+  }
+}
+
 .news-list {
   list-style: none;
-  margin: 0 0 1.25rem;
+  margin: 0;
   padding: 0;
 
   li {
@@ -794,6 +813,87 @@ h2.section-anchor {
       color: $dark-accent;
     }
   }
+}
+
+.card-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.entry-card {
+  padding: 0.85rem 1rem;
+  background: #f7f7f8;
+  border-radius: 10px;
+
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+
+  p {
+    margin: 0 0 0.35rem;
+  }
+
+  @include dark {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.entry-year {
+  color: $color-link;
+  font-weight: 700;
+}
+
+.entry-links a,
+.tag-filter a,
+.year-filter button {
+  margin-right: 0.65rem;
+}
+
+.year-filter,
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.8rem;
+}
+
+.year-filter button {
+  margin: 0;
+  padding: 0.15rem 0.7rem;
+  border: 1px solid #dcd7ff;
+  border-radius: 999px;
+  background: #fff;
+  color: $color-link;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.year-filter button[aria-pressed="true"] {
+  background: #f6f4ff;
+}
+
+.blog-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+
+  li {
+    margin: 0 0 0.9rem;
+  }
+
+  time {
+    display: block;
+    color: $color-link;
+    font-weight: 700;
+  }
+}
+
+.scope {
+  margin-left: 0.35rem;
+  color: $color-text;
 }
 
 @media print {

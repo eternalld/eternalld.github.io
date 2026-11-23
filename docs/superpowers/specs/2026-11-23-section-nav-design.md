@@ -27,7 +27,7 @@ The confirmed biography stays underneath, left aligned, in three paragraphs:
 
 Research Interests and Personal Interests stay, including the full interest names and `AI Agents for Quantitative Trading`. The tags are short labels; they do not replace those sections. Publications stay the two verified papers, with the blue conference badges, no figures, and the existing DOI, PDF, and Repository (code pending) links.
 
-News, Projects, and 履历表 render only when their lists have entries. 履历表 keeps that name. Blog, Awards, and Experience are not created. There is no Selected/Full switch, year filter, or search.
+News, Blog, Projects, Awards & Honors, and 履历表 always render. An empty list shows the exact text `To be soon` and does not invent entries. 履历表 keeps that name and stays last. It is not renamed Experience or Services. Blog links to `/blog.html`. The old `blog.html` sentence “这是博客。” is not an article and is not reused. Tag buttons appear only when a post has a tag. Year buttons appear only when awards span at least two years. The project toggle appears only when there are more than four projects. Publications stay a compact text list of the two verified papers, with conference badges and real resource links. There is no Selected/Full paper switch and no paper search or sort.
 
 ## Navigation
 

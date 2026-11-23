@@ -2,7 +2,7 @@
 
 个人学术主页，版式来自 [Minimal Light](https://github.com/yaoyao-liu/minimal-light)（commit `3786d5d480d2cfb1e384ae83bf43752998d78f80`，CC0）。主题说明保留在页面底部。阅读栏使用 Nunito，许可见 `assets/fonts/nunito-OFL.txt`。
 
-已发布的身份是名字 Haoxin Lyu、GitHub [eternalld](https://github.com/eternalld)，以及侧边栏里的 Google Scholar 链接。没有核实过的单位、职位、学历或邮箱都不会写上。没有条目的栏目不会出现。
+已发布的身份是名字 Haoxin Lyu、GitHub [eternalld](https://github.com/eternalld)，以及侧边栏里的 Google Scholar 链接。没有核实过的单位、职位、学历或邮箱都不会写上。还没有条目的 News、Blog、Projects、Awards & Honors 和履历表会显示 “To be soon”，不会用示例冒充真实内容。
 
 ## 编辑内容
 
@@ -10,15 +10,17 @@
 
 - `_config.yml`：名字、单位、职位、简介、头像、GitHub 和 Scholar 链接。不需要的项删掉整行。`pageviews: false` 会关掉访问次数。
 - `_data/interests.yml`：`items` 是 Research Interests，`personal_items` 是主栏里单独的 Personal Interests。量化交易放在 `personal_items`。
-- `_data/news.yml`：近况。每条要有 `date` 和 `text`，`url` 可选。没有合格条目时，News 和顶部对应链接都不显示。字段示例在 `docs/examples/news.sample.yml`，不会发布。
-- 顶部导航不用单独配置。它只列出当前页面真正渲染出来的 About、Research Interests、Personal Interests、News、Publications、Projects、履历表。
-- `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。
-- `_data/projects.yml`：项目或工程探索。
-- `_data/curriculum.yml`：标题必须是 `履历表`。这里留给以后的教育和工作经历。`items` 为空时，页面不显示这一栏，也不会出现示例职位。
+- `_data/news.yml`：近况。每条要有 `date`（建议 `2026.09`）和 `text`，`url` 可选。页面按日期从新到旧排在浅色可滚动列表里。没有合格条目时显示 “To be soon”。
+- `_data/posts.yml`：博客。字段是 `date`、`title`、`summary`、`url`、`tags`。首页最多预览两条，完整列表在 `/blog.html`。有标签时那里才出现标签筛选。没有文章时两处都显示 “To be soon”，`All posts` 仍指向这个真实页面。原先的 `blog.html` 只有“这是博客。”，没有可复用的文章。
+- `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。页面保持紧凑文本和会议标签，不做 Selected/Full 切换。
+- `_data/projects.yml`：项目。字段是 `title`、`year`、`summary`、`links`（`label` 和 `url`）。文件顺序就是显示顺序，新的放前面。超过 4 条时出现展开/收起。没有条目时显示 “To be soon”，不出现按钮。
+- `_data/awards.yml`：奖项。字段是 `year`、`title`、`source`、`source_url`、`scope`。至少两个不同年份时才显示年份按钮。没有条目时显示 “To be soon”。
+- `_data/curriculum.yml`：标题必须是 `履历表`，放在最后。字段是 `period`、`organization`、`role`、`detail`，可选 `url` 和 `link_label`。没有条目时显示 “To be soon”。
+- 顶部导航不用单独配置。Blog 指向 `/blog.html`，其余指向首页对应栏目。
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
 
-`bio` 可以用 Markdown。首屏欢迎语、两行题目和三个方向标签在 `_data/intro.yml`。页面没有单独的 About Me 标题。Blog、Awards、Experience 没有数据，也就没有栏目。履历栏的名字保持为履历表。
+`bio` 可以用 Markdown。首屏欢迎语、两行题目和三个方向标签在 `_data/intro.yml`。页面没有单独的 About Me 标题。履历栏的名字保持为履历表，不叫 Experience 或 Services。字段示例在 `docs/examples/`，不会发布。
 
 头像目前没有设置，页面也不会显示破图。照片上传到 `assets/img/avatar.jpg`：
 
