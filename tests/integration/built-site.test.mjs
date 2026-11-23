@@ -102,6 +102,9 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("font-awesome");
   absent("busuanzi_value_site_uv");
   absent("docs/examples");
+  assert.match(index, /class="site-masthead"/);
+  assert.match(index, /class="site-masthead__brand" href="\/">Haoxin Lyu<\/a>/);
+  assert.equal((index.match(/<h1/g) || []).length, 1);
   const navStart = index.indexOf('<nav class="section-nav" aria-label="On this page">');
   const navEnd = index.indexOf("</nav>", navStart);
   assert.ok(navStart !== -1 && navEnd > navStart);

@@ -225,14 +225,14 @@ header {
   float: left;
   position: fixed;
   -webkit-font-smoothing: subpixel-antialiased;
-  padding-top: 4em;
+  padding-top: 1.25rem;
   text-align: center;
 }
 
 section {
   width: 650px;
   float: right;
-  padding-top: 4em;
+  padding-top: 1.25rem;
   padding-bottom: 50px;
 }
 
@@ -509,8 +509,34 @@ header ul {
     width: auto;
   }
 
+  .site-masthead {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .site-masthead__inner {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: calc(100% - 2rem);
+    min-height: 0;
+    padding: 0.9rem 0 0.75rem;
+  }
+
+  .site-masthead .section-nav {
+    flex-basis: 100%;
+  }
+
+  .site-masthead .section-nav ul {
+    justify-content: flex-start;
+    gap: 0.45rem 1.05rem;
+  }
+
+  .site-masthead .section-nav a {
+    font-size: 1rem;
+  }
+
   header {
-    padding: 0;
+    padding: 0.75rem 0 0;
 
     a small {
       display: inline;
@@ -656,14 +682,73 @@ html {
   scroll-padding-top: 9rem;
 }
 
-.section-nav {
+.site-masthead {
   position: sticky;
   top: 0;
-  z-index: 5;
-  margin: 0 0 0.4rem;
-  padding: 0.1rem 0 0.45rem;
+  z-index: 30;
   background: #fff;
-  border-bottom: 1px solid #f2f3f3;
+  border-bottom: 1px solid #e6e8ea;
+}
+
+.site-masthead__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  width: min(960px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  min-height: 4.4rem;
+}
+
+.site-masthead__name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #4b5560;
+}
+
+.site-masthead__brand {
+  color: #4b5560;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 3px solid #9aa3ab;
+  padding-bottom: 0.12rem;
+}
+
+.site-masthead .section-nav {
+  position: static;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.site-masthead .section-nav ul {
+  justify-content: flex-end;
+  gap: 0.55rem 1.7rem;
+}
+
+.site-masthead .section-nav a {
+  color: #5f6368;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.site-masthead .section-nav a:hover,
+.site-masthead .section-nav a:focus-visible {
+  color: #3f4650;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.section-nav {
+  position: static;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-bottom: 0;
 
   ul {
     display: flex;
@@ -958,6 +1043,26 @@ h2.section-anchor {
 }
 
 @include dark {
+  .site-masthead {
+    background: $dark-bg;
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .site-masthead__name,
+  .site-masthead__brand {
+    color: $dark-strong;
+    border-bottom-color: #b7bec6;
+  }
+
+  .site-masthead .section-nav a {
+    color: #d5d8de;
+
+    &:hover,
+    &:focus-visible {
+      color: #fff;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     color: $dark-strong;
   }
