@@ -53,7 +53,10 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /https:\/\/doi\.org\/10\.1109\/icassp55912\.2026\.11464718/);
   assert.match(index, /https:\/\/www\.ecva\.net\/papers\/eccv_2024\/papers_ECCV\/papers\/08341\.pdf/);
   assert.match(index, /Repository \(code pending\)/);
-  assert.match(index, /<strong>Haoxin Lyu<\/strong>/);
+  assert.match(index, /<strong class="author-self">Haoxin Lyu<\/strong>/);
+  assert.equal((index.match(/author-self/g) || []).length, 2);
+  assert.match(index, /Sanyuan Zhao<sup><abbr title="corresponding author">†<\/abbr><\/sup>/);
+  assert.match(index, /<p class="author-note"><abbr title="corresponding author">†<\/abbr> corresponding author<\/p>/);
   assert.match(index, /<abbr class="badge badge-static">ICASSP 2026<\/abbr>/);
   assert.match(index, /<abbr class="badge badge-static">ECCV 2024<\/abbr>/);
   absent("gtms-eccv2024-fig1.png");
@@ -101,7 +104,9 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /pp\. 10492/);
   assert.match(index, /pp\. 288/);
   absent("equal contribution");
-  absent("†");
+  absent("project leader");
+  const icassp = index.slice(index.indexOf("ICASSP 2026"), index.indexOf("GTMS:"));
+  assert.equal(icassp.includes("†"), false);
   absent("Services");
   absent("bit.edu.cn");
   absent("gmail.com");
