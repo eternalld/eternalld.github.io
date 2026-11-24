@@ -274,16 +274,27 @@ footer {
   }
 
   &.avatar {
-    border-radius: 100%;
+    // The portrait is 550×585. Keep that ratio and contain the whole frame so the hand at the left edge stays visible.
+    display: block;
+    width: 11.5rem;
+    max-width: 100%;
+    margin: 0 auto 1rem;
+    border-radius: 0;
+    line-height: 0;
 
     &:before {
       display: none;
     }
 
     img {
-      border-radius: 100%;
-      width: 45%;
-      padding: 20px;
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      border-radius: 0;
+      aspect-ratio: 550 / 585;
+      object-fit: contain;
+      object-position: center center;
     }
   }
 }
@@ -560,10 +571,6 @@ header ul {
     word-wrap: normal;
   }
 
-  .image.avatar img {
-    width: 117px;
-  }
-
   #head1o2, #head2o2 {
     visibility: hidden;
   }
@@ -580,10 +587,6 @@ header ul {
 
   header ul li, header ul li + li + li {
     width: 33%;
-  }
-
-  .image.avatar img {
-    width: 95px;
   }
 }
 

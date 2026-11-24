@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 
@@ -153,6 +154,7 @@ test("local assets and preserved pages are present, and drafts are not", () => {
     "assets/js/page-views.js",
     "assets/js/list-controls.js",
     "assets/fonts/crimson-pro-latin-400-normal.woff2",
+    "assets/img/avatar.jpg",
     "blog.html",
     "resume.html",
     "404.html",
@@ -166,6 +168,19 @@ test("local assets and preserved pages are present, and drafts are not", () => {
   assert.match(blog, /href="\/blog\.html"/);
   assert.equal(blog.includes("这是博客"), false);
   assert.equal(blog.includes("tag-filter"), false);
+  const avatar = readFileSync(new URL("assets/img/avatar.jpg", site));
+  assert.equal(createHash("sha256").update(avatar).digest("hex"), "d71b7f059911e6e09b1ff4136bc69738d0c866888bd28d6eb3321efe8f910a5b");
+  assert.equal(avatar.length, 149363);
+  for (const page of [index, blog]) {
+    assert.match(page, /class="image avatar"><img src="\.\/assets\/img\/avatar\.jpg" alt="Haoxin Lyu" width="550" height="585">/);
+    assert.equal(page.includes("daily-quote"), false);
+  }
+  const css = readFileSync(new URL("assets/css/style.css", site), "utf8");
+  const avatarRule = css.match(/\.image\.avatar img\s*\{[^}]*\}/);
+  assert.ok(avatarRule, "avatar image rule is compiled");
+  assert.match(avatarRule[0], /object-fit:\s*contain/);
+  assert.equal(/object-fit:\s*cover/.test(avatarRule[0]), false);
+  assert.equal(/border-radius:\s*100%/.test(avatarRule[0]), false);
   assert.match(readFileSync(new URL("resume.html", site), "utf8"), /这是简历/);
   assert.equal(existsSync(new URL("docs", site)), false);
   assert.equal(existsSync(new URL("legacy", site)), false);
