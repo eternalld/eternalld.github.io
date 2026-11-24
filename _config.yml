@@ -15,6 +15,7 @@ bio: |
   I am also interested in AI agents for quantitative trading.
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
+avatar: ./assets/img/avatar.jpg
 enable_footnote: true
 auto_dark_mode: true
 font: "Sans Serif"
