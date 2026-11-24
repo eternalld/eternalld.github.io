@@ -26,6 +26,7 @@ items:
         highlight: true
       - name: Tianxiong Zhong
       - name: Sanyuan Zhao
+        role: corresponding
     links:
       - label: PDF
         url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08341.pdf

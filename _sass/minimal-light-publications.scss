@@ -65,8 +65,9 @@ blockquote {
     position: static;
     margin: 0 0.45rem 0.15rem 0;
     padding: 0.18em 0.5em;
-    background-color: var(--global-theme-color);
+    background-color: #6454d6;
     color: #fff !important;
+    border-radius: 0.35rem;
     font-size: 0.72rem;
     vertical-align: 0.15em;
     box-shadow: none;
@@ -91,6 +92,25 @@ blockquote {
 .pub-compact__authors,
 .pub-compact__venue {
   margin-top: 0.2rem;
+}
+
+.pub-compact__authors .author-self {
+  color: #6454d6;
+  font-weight: 700;
+
+  @include dark {
+    color: #c4b8ff;
+  }
+}
+
+.author-note {
+  margin: 0 0 0.65rem;
+  color: #5f6368;
+  font-size: 0.85rem;
+
+  @include dark {
+    color: #dadbdf;
+  }
 }
 
 .pub-compact__links {
