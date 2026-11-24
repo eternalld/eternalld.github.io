@@ -274,7 +274,7 @@ footer {
   }
 
   &.avatar {
-    // The portrait is 550×585. Keep that ratio and contain the whole frame so the hand at the left edge stays visible.
+    // The portrait is 1024×1365. Keep that ratio. The PNG already has transparent rounded corners, so do not add a CSS radius that would clip the hand.
     display: block;
     width: 11.5rem;
     max-width: 100%;
@@ -292,7 +292,7 @@ footer {
       height: auto;
       padding: 0;
       border-radius: 0;
-      aspect-ratio: 550 / 585;
+      aspect-ratio: 1024 / 1365;
       object-fit: contain;
       object-position: center center;
     }
