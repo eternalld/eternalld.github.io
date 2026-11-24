@@ -44,11 +44,16 @@ test("empty news keeps the heading and does not publish the sample", () => {
 test("intro motion runs once and reduced motion removes it", () => {
   assert.match(motion, /@media \(prefers-reduced-motion: no-preference\)/);
   assert.match(motion, /animation: intro-fade 0\.8s ease both/);
-  assert.match(motion, /animation: tag-float 3\.2s ease-in-out 1/);
+  assert.match(motion, /\.intro__tags li \{\s*animation: tag-float 3\.2s ease-in-out infinite;/);
+  assert.match(motion, /\.intro__tags li:nth-child\(2\) \{\s*animation-delay: 0\.15s;/);
+  assert.match(motion, /\.intro__tags li:nth-child\(3\) \{\s*animation-delay: 0\.3s;/);
+  assert.match(motion, /@keyframes tag-float \{\s*0%, 100% \{ transform: translateY\(0\); \}\s*40% \{ transform: translateY\(-3px\); \}/);
+  assert.match(motion, /\.intro__tags:hover li,\s*\.intro__tags:focus-within li \{\s*animation-play-state: paused;/);
+  assert.equal(/\.intro \{\s*animation:[^}]*infinite/.test(motion), false);
   assert.match(motion, /translateY\(-3px\)/);
   assert.match(motion, /animation: none !important/);
+  assert.match(motion, /transform: none !important/);
   assert.match(motion, /scroll-behavior: auto !important/);
-  assert.equal(motion.includes("infinite"), false);
   assert.equal(motion.includes("parallax"), false);
   assert.match(layout, /© 2026 \{\{ site\.title \}\}\. Powered by Jekyll and/);
   assert.equal(layout.includes("AcademicPages"), false);
