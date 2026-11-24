@@ -22,7 +22,7 @@
 
 `bio` 可以用 Markdown。首屏欢迎语、两行题目和三个方向标签在 `_data/intro.yml`。页面没有单独的 About Me 标题。原先的履历表现在标题是 Experience。字段示例在 `docs/examples/`，不会发布。
 
-侧栏照片是 `assets/img/avatar.jpg`（550×585），`_config.yml` 的 `avatar` 指向它。首页和 `/blog.html` 共用这一栏，所以两处是同一张图。容器按照片原比例用 `object-fit: contain` 显示整张图，不裁成圆形，以免切掉画面左侧伸向栏杆的手。更换时仍把文件放在 `assets/img/avatar.jpg`，并保持图片的宽高比。没有 `avatar` 这一行时，侧边栏不显示照片。
+侧栏肖像是 `assets/img/avatar.png`（1024×1365），`_config.yml` 的 `avatar` 指向它。首页和 `/blog.html` 共用这一栏，所以两处是同一张图。容器宽约 184px，按照片原比例用 `object-fit: contain` 显示整张图。圆角来自 PNG 自己的透明角，页面不再加圆形或更大的圆角，以免切掉头脸、伸出的手或相机。没有 `avatar` 这一行时，侧边栏不显示肖像。
 
 配置文件的编辑地址是 https://github.com/eternalld/eternalld.github.io/edit/main/_config.yml 。
 
