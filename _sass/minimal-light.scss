@@ -1043,7 +1043,7 @@ h2.section-anchor {
   }
 
   .intro__tags li {
-    animation: tag-float 3.2s ease-in-out 1;
+    animation: tag-float 3.2s ease-in-out infinite;
   }
 
   .intro__tags li:nth-child(2) {
@@ -1052,6 +1052,11 @@ h2.section-anchor {
 
   .intro__tags li:nth-child(3) {
     animation-delay: 0.3s;
+  }
+
+  .intro__tags:hover li,
+  .intro__tags:focus-within li {
+    animation-play-state: paused;
   }
 }
 
