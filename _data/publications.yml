@@ -32,5 +32,3 @@ items:
         url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08341.pdf
       - label: DOI
         url: https://doi.org/10.1007/978-3-031-72848-8_17
-      - label: Repository (code pending)
-        url: https://github.com/eternalld/GTMS

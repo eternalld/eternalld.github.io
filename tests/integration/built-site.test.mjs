@@ -52,7 +52,8 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /GTMS: A Gradient-Driven Tree-Guided Mask-Free Referring Image Segmentation Method/);
   assert.match(index, /https:\/\/doi\.org\/10\.1109\/icassp55912\.2026\.11464718/);
   assert.match(index, /https:\/\/www\.ecva\.net\/papers\/eccv_2024\/papers_ECCV\/papers\/08341\.pdf/);
-  assert.match(index, /Repository \(code pending\)/);
+  assert.equal(index.includes("Repository (code pending)"), false);
+  assert.equal(index.includes("https://github.com/eternalld/GTMS"), false);
   assert.match(index, /<strong class="author-self">Haoxin Lyu<\/strong>/);
   assert.equal((index.match(/author-self/g) || []).length, 2);
   assert.match(index, /Sanyuan Zhao<sup><abbr title="corresponding author">†<\/abbr><\/sup>/);
@@ -138,12 +139,15 @@ test("the built homepage keeps identity and hides empty sections", () => {
   absent("Show fewer");
   absent("data-year-button");
   absent("tag-filter");
-  assert.equal((index.match(/To be soon/g) || []).length, 5);
+  assert.equal((index.match(/To be soon/g) || []).length, 4);
+  assert.match(index, /Kuaishou Technology/);
+  assert.match(index, /2026\.07 – Present/);
+  assert.match(index, /Master's in Computer Technology/);
   absent('id="about"');
   assert.match(index, /id="publications"/);
   const about = index.slice(index.indexOf('class="intro__body"'), index.indexOf('id="news"'));
   assert.equal((about.match(/<p>/g) || []).length, 4);
-  assert.equal((index.match(/class="resource-link"/g) || []).length, 4);
+  assert.equal((index.match(/class="resource-link"/g) || []).length, 3);
   absent("arxiv.org");
   absent("A real update you want to show.");
   absent("孔子");

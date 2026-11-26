@@ -1,15 +1,16 @@
 <h2 id="experience" class="section-anchor"><span id="curriculum"></span>{{ site.data.curriculum.heading | default: "Experience" }}</h2>
 {% assign items = site.data.curriculum.items %}
 {% if items and items.size > 0 %}
-<div class="card-list">
+<div class="experience-list">
 {% for item in items %}
-<article class="entry-card">
-{% if item.period %}<p class="entry-year">{{ item.period }}</p>{% endif %}
-{% if item.organization %}<h3>{{ item.organization }}</h3>{% endif %}
-{% assign role = item.role | default: item.title %}
-{% if role %}<p>{{ role }}</p>{% endif %}
+<article class="experience-card">
+<div class="experience-info">
+<div class="experience-head">
+{% if item.organization %}<strong>{{ item.organization }}</strong>{% endif %}
+{% if item.period %}<em>{{ item.period }}</em>{% endif %}
+</div>
 {% if item.detail %}<p>{{ item.detail }}</p>{% endif %}
-{% if item.url and item.link_label %}<p><a href="{{ item.url }}">{{ item.link_label }}</a></p>{% endif %}
+</div>
 </article>
 {% endfor %}
 </div>

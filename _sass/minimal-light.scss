@@ -980,6 +980,77 @@ h2.section-anchor {
   font-weight: 700;
 }
 
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 1.25rem;
+}
+
+.experience-card {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+
+  @include dark {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.experience-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 12px;
+}
+
+.experience-head strong {
+  color: #202124;
+  font-size: 16px;
+  font-weight: 700;
+
+  @include dark {
+    color: #eeeff0;
+  }
+}
+
+.experience-head em {
+  color: #9aa0a6;
+  font-size: 14px;
+  white-space: nowrap;
+
+  @include dark {
+    color: #c5cad1;
+  }
+}
+
+.experience-info {
+  color: #5f6368;
+  font-size: 15px;
+  line-height: 1.5;
+
+  p {
+    margin: 0;
+  }
+
+  @include dark {
+    color: #dadbdf;
+  }
+}
+
+@media (max-width: 720px) {
+  .experience-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-head em {
+    white-space: normal;
+  }
+}
+
 .entry-links a,
 .tag-filter a,
 .year-filter button {
