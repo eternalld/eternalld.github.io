@@ -28,8 +28,8 @@ test("the two verified papers are editable data without citation counts or inven
   assert.equal(publications.includes("GTMS: A Gradient-Driven Tree-Guided Mask-Free Referring Image Segmentation Method"), true);
   assert.equal(publications.includes("https://doi.org/10.1007/978-3-031-72848-8_17"), true);
   assert.equal(publications.includes("https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08341.pdf"), true);
-  assert.equal(publications.includes("https://github.com/eternalld/GTMS"), true);
-  assert.equal(publications.includes("Repository (code pending)"), true);
+  assert.equal(publications.includes("https://github.com/eternalld/GTMS"), false);
+  assert.equal(publications.includes("Repository (code pending)"), false);
   assert.equal(publications.includes("Haoxin Lyu"), true);
   assert.equal(publications.includes("ICASSP 2026"), true);
   assert.equal(publications.includes("ECCV 2024"), true);
@@ -40,9 +40,9 @@ test("the two verified papers are editable data without citation counts or inven
   assert.equal(publications.includes("gmail.com"), false);
 });
 
-test("Experience is the empty final section and is not a Services block", () => {
+test("Experience is the final section and is not a Services block", () => {
   assert.match(curriculum, /^heading: Experience$/m);
-  assert.match(curriculum, /^items: \[\]$/m);
+  assert.equal(curriculum.includes("items: []"), false);
   assert.equal(curriculum.includes("Services"), false);
   assert.ok(index.indexOf("publications.md") < index.indexOf("curriculum.md"));
   assert.ok(index.indexOf("projects.md") < index.indexOf("curriculum.md"));

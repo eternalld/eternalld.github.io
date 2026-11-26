@@ -1,2 +1,8 @@
 heading: Experience
-items: []
+items:
+  - organization: Kuaishou Technology
+    period: "2026.07 – Present"
+    detail: "Algorithm Engineer in large language models. Working on recursive self-improvement, and post-training for agents and generative models."
+  - organization: Beijing Institute of Technology
+    period: "2023.09 – 2026.06"
+    detail: "Master's in Computer Technology. Research on generative models, including post-training and controllable generation, as well as medical image analysis and multimodal understanding."
