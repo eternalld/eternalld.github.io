@@ -40,10 +40,11 @@ test("the two verified papers are editable data without citation counts or inven
   assert.equal(publications.includes("gmail.com"), false);
 });
 
-test("Experience is the final section and is not a Services block", () => {
+test("Experience stays after Projects and before Awards", () => {
   assert.match(curriculum, /^heading: Experience$/m);
   assert.equal(curriculum.includes("items: []"), false);
   assert.equal(curriculum.includes("Services"), false);
   assert.ok(index.indexOf("publications.md") < index.indexOf("curriculum.md"));
   assert.ok(index.indexOf("projects.md") < index.indexOf("curriculum.md"));
+  assert.ok(index.indexOf("curriculum.md") < index.indexOf("awards.md"));
 });

@@ -43,7 +43,7 @@ test("the built homepage keeps identity and hides empty sections", () => {
   const awardsAt = index.indexOf('id="awards"');
   const experienceAt = index.indexOf('id="experience"');
   assert.ok(newsAt < blogAt && blogAt < publicationsAt);
-  assert.ok(publicationsAt < projectsAt && projectsAt < awardsAt && awardsAt < experienceAt);
+  assert.ok(publicationsAt < projectsAt && projectsAt < experienceAt && experienceAt < awardsAt);
   assert.ok(index.indexOf('id="curriculum"') > experienceAt);
   assert.match(index, /I am also interested in AI agents for quantitative trading\./);
   assert.equal(index.split("quantitative trading").length - 1, 1);
