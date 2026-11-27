@@ -9,7 +9,7 @@
 {% if item.organization %}<strong>{{ item.organization }}</strong>{% endif %}
 {% if item.period %}<em>{{ item.period }}</em>{% endif %}
 </div>
-{% if item.detail %}<p>{{ item.detail }}</p>{% endif %}
+{% if item.parts %}<p>{% for part in item.parts %}{% if part.focus %}<span class="experience-focus">{{ part.text }}</span>{% else %}{{ part.text }}{% endif %}{% endfor %}</p>{% elsif item.detail %}<p>{{ item.detail }}</p>{% endif %}
 </div>
 </article>
 {% endfor %}
