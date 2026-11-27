@@ -13,7 +13,11 @@ test("the Latin motto sits under the portrait and nowhere else", () => {
   assert.equal(layout.split("Mens, Manus et Cor").length - 1, 1);
   assert.equal(layout.includes('"Mens, Manus et Cor"'), false);
   assert.equal(layout.includes("心灵"), false);
-  assert.match(css, /\.avatar-motto \{\s*margin: 0\.35rem 0 0;\s*color: #5f6368;\s*font-size: 13px;\s*font-style: italic;\s*line-height: 1\.35;\s*text-align: center;/);
-  assert.match(css, /\.avatar-motto \{[\s\S]*@include dark \{\s*color: #dadbdf;/);
-  assert.equal(css.includes(".avatar-motto") && css.includes("animation:") && css.slice(css.indexOf(".avatar-motto"), css.indexOf(".avatar-motto") + 400).includes("animation:"), false);
+  assert.match(layout, /<div class="avatar-motto-wrap">\s*<p class="avatar-motto" lang="la">Mens, Manus et Cor<\/p>/);
+  assert.match(css, /\.avatar-motto-wrap \{\s*width: 11\.5rem;\s*max-width: 100%;\s*margin: 0\.35rem auto 0;\s*container-type: inline-size;/);
+  assert.match(css, /\.avatar-motto \{\s*margin: 0;\s*color: #6454d6;\s*font-size: 10\.87cqi;\s*letter-spacing: 0\.205cqi;\s*font-style: italic;\s*line-height: 1\.35;\s*text-align: center;\s*white-space: nowrap;/);
+  assert.match(css, /\.avatar-motto \{[\s\S]*@include dark \{\s*color: #c4b8ff;/);
+  const mottoRule = css.slice(css.indexOf(".avatar-motto {"), css.indexOf(".social-icons"));
+  assert.equal(mottoRule.includes("transform:"), false);
+  assert.equal(mottoRule.includes("scaleX"), false);
 });
