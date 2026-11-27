@@ -13,7 +13,7 @@ test("the Latin motto sits under the portrait and nowhere else", () => {
   assert.equal(layout.split("Mens, Manus et Cor").length - 1, 1);
   assert.equal(layout.includes('"Mens, Manus et Cor"'), false);
   assert.equal(layout.includes("心灵"), false);
-  assert.match(css, /\.avatar-motto \{\s*margin: 0\.35rem 0 0;\s*color: #5f6368;\s*font-size: 13px;\s*font-style: italic;\s*line-height: 1\.35;\s*text-align: center;/);
-  assert.match(css, /\.avatar-motto \{[\s\S]*@include dark \{\s*color: #dadbdf;/);
+  assert.match(css, /\.avatar-motto \{\s*margin: 0\.35rem 0 0;\s*color: #6454d6;\s*font-size: 15px;\s*font-style: italic;\s*line-height: 1\.35;\s*text-align: center;/);
+  assert.match(css, /\.avatar-motto \{[\s\S]*@include dark \{\s*color: #c4b8ff;/);
   assert.equal(css.includes(".avatar-motto") && css.includes("animation:") && css.slice(css.indexOf(".avatar-motto"), css.indexOf(".avatar-motto") + 400).includes("animation:"), false);
 });
