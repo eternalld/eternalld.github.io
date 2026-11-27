@@ -15,7 +15,7 @@
 - `_data/publications.yml`：论文。没有核实过的 PDF、代码或图就不要加链接。每条按会议标记、标题、作者、会议信息、资源链接排成一列，不做 Selected/Full 切换，也不加共同一作或通讯标记。
 - `_data/projects.yml`：项目。字段是 `title`、`year`、`summary`、`links`（`label` 和 `url`）。文件顺序就是显示顺序，新的放前面。超过 4 条时出现展开/收起。没有条目时显示 “To be soon”，不出现按钮。
 - `_data/awards.yml`：奖项。字段是 `year`、`title`、`source`、`source_url`、`scope`。至少两个不同年份时才显示年份按钮。没有条目时显示 “To be soon”。
-- `_data/curriculum.yml`：标题是 `Experience`，放在最后。已确认的两条是快手在职和北京理工大学硕士，文案以文件为准。机构标识先不放，因为没有确认可再分发的官方文件。没有条目时显示 “To be soon”。旧地址 `#curriculum` 仍停在这一节，导航里不再单列。GTMS 论文不再放代码仓库链接。
+- `_data/curriculum.yml`：标题是 `Experience`，放在 Projects 之后、Awards 之前。已确认的经历以文件为准。机构标识先不放，因为没有确认可再分发的官方文件。没有条目时显示 “To be soon”。旧地址 `#curriculum` 仍停在这一节，导航里不再单列。GTMS 论文不再放代码仓库链接。
 - 顶部是横跨页面的独立栏：左侧名字链回首页，右侧固定为 News、Publications、Experience、Projects、Awards、Blog。Blog 指向 `/blog.html`，其余指向首页对应栏目。侧栏不再重复名字，仍保留访问次数。GitHub 和 Google Scholar 各占一行，图标旁有完整文字。页面不再显示每日一句。页面不再单列 Research Interests 或 Personal Interests。
 
 带字段说明的写法在 `docs/examples/`。那些文件不会被发布。论文来源说明在 `docs/import/`，同样不会发布。
