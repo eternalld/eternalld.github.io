@@ -176,6 +176,13 @@ test("local assets and preserved pages are present, and drafts are not", () => {
   assert.match(blog, /To be soon/);
   assert.match(blog, /href="\/blog\.html"/);
   assert.equal(blog.includes("这是博客"), false);
+  for (const page of [index, blog]) {
+    const avatarAt = page.indexOf('class="image avatar"');
+    const mottoAt = page.indexOf('<p class="avatar-motto" lang="la">Mens, Manus et Cor</p>');
+    const counterAt = page.indexOf("本站累计访问");
+    assert.ok(avatarAt !== -1 && mottoAt > avatarAt && counterAt > mottoAt);
+    assert.equal(page.split("Mens, Manus et Cor").length - 1, 1);
+  }
   assert.equal(blog.includes("tag-filter"), false);
   const avatar = readFileSync(new URL("assets/img/avatar.png", site));
   assert.equal(createHash("sha256").update(avatar).digest("hex"), "42df5ecb847da47aec60a197ad3d5a45b3dd72ff8d2ccc822fa827ea34c18492");

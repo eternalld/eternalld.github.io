@@ -278,7 +278,7 @@ footer {
     display: block;
     width: 11.5rem;
     max-width: 100%;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0;
     border-radius: 0;
     line-height: 0;
 
@@ -302,6 +302,19 @@ footer {
 #header .image.avatar {
   margin: 0 0 1em 0;
   width: 8em;
+}
+
+.avatar-motto {
+  margin: 0.35rem 0 0;
+  color: #5f6368;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.35;
+  text-align: center;
+
+  @include dark {
+    color: #dadbdf;
+  }
 }
 
 // ---------------------------------------------------------------------------
