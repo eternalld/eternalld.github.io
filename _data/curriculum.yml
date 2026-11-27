@@ -55,7 +55,7 @@ items:
       - text: "controllable generation (layout-to-image)"
         focus: true
       - text: "."
-  - organization: "Xuzhi Technology (ByteDance Seed GUI Agent, Doubao Phone startup team)"
+  - organization: "Seq-AI (ByteDance Seed GUI Agent, Doubao Phone startup team)"
     period: "2024.06 – 2024.08"
     parts:
       - text: "Algorithm Intern. Worked on exploring and building "

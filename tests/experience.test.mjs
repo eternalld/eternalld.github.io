@@ -13,7 +13,7 @@ test("Experience lists the job, the degree, then the four internships", () => {
     "Beijing Institute of Technology",
     "TAL Education Group (AI Growth Lab)",
     "Institute of Artificial Intelligence, China Telecom (TeleAI)",
-    "Xuzhi Technology (ByteDance Seed GUI Agent, Doubao Phone startup team)",
+    "Seq-AI (ByteDance Seed GUI Agent, Doubao Phone startup team)",
     "Unipus, Foreign Language Teaching and Research Press (FLTRP)",
   ];
   const positions = names.map((name) => curriculum.indexOf(name));
