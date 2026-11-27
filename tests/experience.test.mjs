@@ -7,17 +7,20 @@ const template = readFileSync(new URL("../_includes/curriculum.md", import.meta.
 const css = readFileSync(new URL("../_sass/minimal-light.scss", import.meta.url), "utf8");
 const publications = readFileSync(new URL("../_data/publications.yml", import.meta.url), "utf8");
 
-test("Experience lists the job, the degree, then the four internships", () => {
-  const names = [
+test("Experience lists the job, the degree, the internships, then the bachelor's card", () => {
+  const markers = [
     "Kuaishou Technology",
-    "Beijing Institute of Technology",
-    "TAL Education Group (AI Growth Lab)",
+    "2023.09 – 2026.06",
     "Institute of Artificial Intelligence, China Telecom (TeleAI)",
     "Seq-AI (ByteDance Seed GUI Agent, Doubao Phone startup team)",
+    "TAL Education Group (AI Growth Lab)",
     "Unipus, Foreign Language Teaching and Research Press (FLTRP)",
+    "2019.09 – 2023.06",
+    "Bachelor's in Computer Science and Technology through the Xu Teli Honors Program.",
   ];
-  const positions = names.map((name) => curriculum.indexOf(name));
+  const positions = markers.map((marker) => curriculum.indexOf(marker));
   assert.ok(positions.every((index, i) => index !== -1 && (i === 0 || index > positions[i - 1])));
+  assert.equal(curriculum.includes('text: "Bachelor\'s in Computer Science and Technology through the Xu Teli Honors Program."\n        focus: true'), false);
   assert.match(curriculum, /period: "2026\.07 – Present"/);
   assert.match(curriculum, /period: "2023\.09 – 2026\.06"/);
   assert.match(curriculum, /period: "2024\.02 – 2025\.06 \(including remote\)"/);
@@ -45,7 +48,6 @@ test("Experience lists the job, the degree, then the four internships", () => {
   assert.equal(curriculum.includes('text: "visual generative models"'), false);
   assert.equal(curriculum.includes('text: "idea generation"'), false);
   assert.equal(curriculum.includes('text: "screenplay rewriting"'), false);
-  assert.equal(curriculum.includes("bachelor"), false);
   assert.equal(curriculum.includes("advisor"), false);
   assert.equal(curriculum.includes("http"), false);
   assert.match(template, /class="experience-focus"/);

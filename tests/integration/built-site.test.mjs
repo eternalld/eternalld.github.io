@@ -145,7 +145,7 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /Master's in Computer Technology/);
   assert.match(index, /Institute of Artificial Intelligence, China Telecom \(TeleAI\)/);
   assert.match(index, /2024\.11 – 2025\.02/);
-  assert.equal((index.match(/class="experience-card"/g) || []).length, 6);
+  assert.equal((index.match(/class="experience-card"/g) || []).length, 7);
   assert.match(index, /<span class="experience-focus">film generation \(from idea to video\)<\/span>/);
   assert.match(index, /<span class="experience-focus">model post-training<\/span>/);
   assert.match(index, /<span class="experience-focus">quality assessment of long-sequence consistent images and videos<\/span>/);
@@ -169,6 +169,8 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<span class="experience-focus">controllable generation \(layout-to-image\)<\/span>/);
   assert.equal(index.includes('<span class="experience-focus">visual generative models</span>'), false);
   assert.match(experiencePlain, /Research Intern in visual generative models\. Worked on post-training for generative models, and controllable generation \(layout-to-image\)\./);
+  assert.match(experiencePlain, /Bachelor's in Computer Science and Technology through the Xu Teli Honors Program\./);
+  assert.equal(index.includes('<span class="experience-focus">Bachelor\'s in Computer Science and Technology through the Xu Teli Honors Program.</span>'), false);
   absent('id="about"');
   assert.match(index, /id="publications"/);
   const about = index.slice(index.indexOf('class="intro__body"'), index.indexOf('id="news"'));
