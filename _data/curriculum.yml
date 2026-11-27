@@ -2,7 +2,40 @@ heading: Experience
 items:
   - organization: Kuaishou Technology
     period: "2026.07 – Present"
-    detail: "Algorithm Engineer in large language models. Working on recursive self-improvement, and post-training for agents and generative models."
+    parts:
+      - text: "Algorithm Engineer in large language models. Working on "
+      - text: "recursive self-improvement"
+        focus: true
+      - text: ", and "
+      - text: "post-training for agents and generative models"
+        focus: true
+      - text: "."
   - organization: Beijing Institute of Technology
     period: "2023.09 – 2026.06"
-    detail: "Master's in Computer Technology. Research on generative models, including post-training and controllable generation, as well as medical image analysis and multimodal understanding."
+    parts:
+      - text: "Master's in Computer Technology. Research on "
+      - text: "generative models"
+        focus: true
+      - text: ", including "
+      - text: "post-training"
+        focus: true
+      - text: " and "
+      - text: "controllable generation"
+        focus: true
+      - text: ", as well as "
+      - text: "medical image analysis"
+        focus: true
+      - text: " and "
+      - text: "multimodal understanding"
+        focus: true
+      - text: "."
+  - organization: "Institute of Artificial Intelligence, China Telecom (TeleAI)"
+    period: "2024.11 – 2025.02"
+    parts:
+      - text: "Research Intern in visual generative models. Worked on "
+      - text: "post-training for generative models"
+        focus: true
+      - text: ", and "
+      - text: "controllable generation (layout-to-image)"
+        focus: true
+      - text: "."

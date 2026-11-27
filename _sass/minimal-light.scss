@@ -1062,6 +1062,15 @@ h2.section-anchor {
   }
 }
 
+.experience-focus {
+  color: #6454d6;
+  font-weight: 700;
+
+  @include dark {
+    color: #c4b8ff;
+  }
+}
+
 @media (max-width: 720px) {
   .experience-head {
     flex-direction: column;

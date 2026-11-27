@@ -9,20 +9,38 @@ const publications = readFileSync(new URL("../_data/publications.yml", import.me
 
 const job = "Algorithm Engineer in large language models. Working on recursive self-improvement, and post-training for agents and generative models.";
 const degree = "Master's in Computer Technology. Research on generative models, including post-training and controllable generation, as well as medical image analysis and multimodal understanding.";
+const intern = "Research Intern in visual generative models. Worked on post-training for generative models, and controllable generation (layout-to-image).";
 
-test("Experience lists the confirmed job before the master's degree", () => {
-  assert.ok(curriculum.indexOf("Kuaishou Technology") < curriculum.indexOf("Beijing Institute of Technology"));
+test("Experience lists the job, the master's degree, then the TeleAI internship", () => {
+  const kuaishou = curriculum.indexOf("Kuaishou Technology");
+  const bit = curriculum.indexOf("Beijing Institute of Technology");
+  const teleai = curriculum.indexOf("Institute of Artificial Intelligence, China Telecom (TeleAI)");
+  assert.ok(kuaishou !== -1 && kuaishou < bit && bit < teleai);
   assert.match(curriculum, /period: "2026\.07 – Present"/);
   assert.match(curriculum, /period: "2023\.09 – 2026\.06"/);
-  assert.equal(curriculum.includes(job), true);
-  assert.equal(curriculum.includes(degree), true);
-  assert.equal(curriculum.includes("Intern"), false);
+  assert.match(curriculum, /period: "2024\.11 – 2025\.02"/);
+  for (const phrase of [
+    "recursive self-improvement",
+    "post-training for agents and generative models",
+    "generative models",
+    "post-training",
+    "controllable generation",
+    "medical image analysis",
+    "multimodal understanding",
+    "post-training for generative models",
+    "controllable generation (layout-to-image)",
+  ]) {
+    assert.equal(curriculum.includes(`text: "${phrase}"`), true, phrase);
+  }
+  assert.equal(curriculum.includes('text: "visual generative models"'), false);
   assert.equal(curriculum.includes("bachelor"), false);
   assert.equal(curriculum.includes("advisor"), false);
   assert.equal(curriculum.includes("http"), false);
-  assert.match(template, /class="experience-card"/);
-  assert.match(template, /class="experience-head"/);
-  assert.equal(template.includes("<ul"), false);
+  assert.match(template, /class="experience-focus"/);
+  assert.match(template, /part\.focus/);
+  assert.match(css, /\.experience-focus \{\s*color: #6454d6;\s*font-weight: 700;/);
+  assert.match(css, /\.experience-focus \{[\s\S]*@include dark \{\s*color: #c4b8ff;/);
+  assert.equal([job, degree, intern].every((sentence) => sentence.length > 0), true);
 });
 
 test("experience cards use the confirmed measurements", () => {
