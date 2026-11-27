@@ -29,6 +29,22 @@ items:
       - text: "multimodal understanding"
         focus: true
       - text: "."
+  - organization: "TAL Education Group (AI Growth Lab)"
+    period: "2024.02 – 2025.06 (including remote)"
+    parts:
+      - text: "Research Intern. Worked on "
+      - text: "film generation (from idea to video)"
+        focus: true
+      - text: ", including idea generation, screenplay rewriting, storyboard and camera-motion design, "
+      - text: "model post-training"
+        focus: true
+      - text: ", "
+      - text: "quality assessment of long-sequence consistent images and videos"
+        focus: true
+      - text: ", and "
+      - text: "reference-image-consistent generation"
+        focus: true
+      - text: "."
   - organization: "Institute of Artificial Intelligence, China Telecom (TeleAI)"
     period: "2024.11 – 2025.02"
     parts:
@@ -39,3 +55,17 @@ items:
       - text: "controllable generation (layout-to-image)"
         focus: true
       - text: "."
+  - organization: "Xuzhi Technology (ByteDance Seed GUI Agent, Doubao Phone startup team)"
+    period: "2024.06 – 2024.08"
+    parts:
+      - text: "Algorithm Intern. Worked on exploring and building "
+      - text: "benchmarks for GUI agents"
+        focus: true
+      - text: "."
+  - organization: "Unipus, Foreign Language Teaching and Research Press (FLTRP)"
+    period: "2023.10 – 2024.02"
+    parts:
+      - text: "Algorithm Intern. Worked on "
+      - text: "controllable generation"
+        focus: true
+      - text: " for AIGC, with a focus on comics."

@@ -145,7 +145,19 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /Master's in Computer Technology/);
   assert.match(index, /Institute of Artificial Intelligence, China Telecom \(TeleAI\)/);
   assert.match(index, /2024\.11 – 2025\.02/);
-  assert.equal((index.match(/class="experience-card"/g) || []).length, 3);
+  assert.equal((index.match(/class="experience-card"/g) || []).length, 6);
+  assert.match(index, /<span class="experience-focus">film generation \(from idea to video\)<\/span>/);
+  assert.match(index, /<span class="experience-focus">model post-training<\/span>/);
+  assert.match(index, /<span class="experience-focus">quality assessment of long-sequence consistent images and videos<\/span>/);
+  assert.match(index, /<span class="experience-focus">reference-image-consistent generation<\/span>/);
+  assert.match(index, /<span class="experience-focus">benchmarks for GUI agents<\/span>/);
+  assert.equal(index.includes('<span class="experience-focus">idea generation</span>'), false);
+  assert.equal(index.includes('<span class="experience-focus">Research Intern.</span>'), false);
+  assert.equal(index.includes('<span class="experience-focus">Algorithm Intern.</span>'), false);
+  const experiencePlain = index.slice(index.indexOf('id="experience"')).replace(/<[^>]+>/g, "");
+  assert.match(experiencePlain, /Research Intern\. Worked on film generation \(from idea to video\), including idea generation, screenplay rewriting, storyboard and camera-motion design, model post-training, quality assessment of long-sequence consistent images and videos, and reference-image-consistent generation\./);
+  assert.match(experiencePlain, /Algorithm Intern\. Worked on exploring and building benchmarks for GUI agents\./);
+  assert.match(experiencePlain, /Algorithm Intern\. Worked on controllable generation for AIGC, with a focus on comics\./);
   assert.match(index, /<span class="experience-focus">recursive self-improvement<\/span>/);
   assert.match(index, /<span class="experience-focus">post-training for agents and generative models<\/span>/);
   assert.match(index, /<span class="experience-focus">generative models<\/span>/);
@@ -156,7 +168,6 @@ test("the built homepage keeps identity and hides empty sections", () => {
   assert.match(index, /<span class="experience-focus">post-training for generative models<\/span>/);
   assert.match(index, /<span class="experience-focus">controllable generation \(layout-to-image\)<\/span>/);
   assert.equal(index.includes('<span class="experience-focus">visual generative models</span>'), false);
-  const experiencePlain = index.slice(index.indexOf('id="experience"')).replace(/<[^>]+>/g, "");
   assert.match(experiencePlain, /Research Intern in visual generative models\. Worked on post-training for generative models, and controllable generation \(layout-to-image\)\./);
   absent('id="about"');
   assert.match(index, /id="publications"/);
